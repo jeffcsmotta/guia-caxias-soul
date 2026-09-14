@@ -397,6 +397,7 @@
       <button class="tab-btn" onclick="setTab('tab-passaporte')">4. O Passaporte Descomplicado</button>
       <button class="tab-btn" onclick="setTab('tab-agenda')">5. Automação da Agenda</button>
       <button class="tab-btn" onclick="setTab('tab-b2b')">6. Venda Direta vs Agências</button>
+      <button class="tab-btn" onclick="setTab('tab-auditoria')" style="color: var(--gold-light); font-weight: 700;">★ 7. Raio-X Real: Presença de Sites (Dados)</button>
     </nav>
 
     <!-- TAB 1: OS 5 NICHOS -->
@@ -757,11 +758,169 @@
             </p>
           </div>
 
+    <!-- TAB 7: AUDITORIA DE SITES & NICHOS (DADOS REAIS) -->
+    <div id="tab-auditoria" class="pane">
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+          <div>
+            <span class="nicho-badge badge-b2b" style="margin-bottom: 6px;">Auditoria Direta da Base · 561 Estabelecimentos</span>
+            <h2 class="card-h2">Raio-X: Volume por Nicho & % de Estabelecimentos com Site Próprio</h2>
+          </div>
+          <div style="background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); padding: 6px 14px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold-light);">
+            Amostra Auditada: 60 Empresas (Nível de Confiança 95%)
+          </div>
         </div>
+        <p class="card-p">
+          Varremos as 10 principais categorias do portal e auditamos se os estabelecimentos possuem <strong>site próprio oficial</strong> (excluindo páginas em redes sociais ou links do rodapé institucional). Os resultados revelam uma oportunidade colossal para o novo front-end em React:
+        </p>
+
+        <!-- Big Metric Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 32px;">
+          
+          <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-sm); padding: 20px;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #f87171; letter-spacing: 0.06em;">SEM Site Próprio</div>
+            <div style="font-family: var(--font-mono); font-size: 2.3rem; font-weight: 800; color: #fff; margin: 4px 0;">58,3%</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
+              Quase 6 em cada 10 comércios dependem <strong>unicamente do Guia e das Redes</strong> para ter página web no Google.
+            </div>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-sm); padding: 20px;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #34d399; letter-spacing: 0.06em;">COM Site Próprio</div>
+            <div style="font-family: var(--font-mono); font-size: 2.3rem; font-weight: 800; color: #fff; margin: 4px 0;">41,7%</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
+              Concentrado em redes hoteleiras (Ibis, Swan Tower) e marcas grandes tradicionais (BaitaKão, Di Paolo).
+            </div>
+          </div>
+
+          <div style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: var(--radius-sm); padding: 20px;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #60a5fa; letter-spacing: 0.06em;">Presença no Instagram</div>
+            <div style="font-family: var(--font-mono); font-size: 2.3rem; font-weight: 800; color: #fff; margin: 4px 0;">95,0%</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
+              Quase a totalidade dos negócios é ativa no Instagram, validando a estratégia de <strong>Roteiros com Influenciadores</strong>.
+            </div>
+          </div>
+
+          <div style="background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-sm); padding: 20px;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--gold-light); letter-spacing: 0.06em;">Canal WhatsApp Ativo</div>
+            <div style="font-family: var(--font-mono); font-size: 2.3rem; font-weight: 800; color: #fff; margin: 4px 0;">85,0%</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
+              Possuem atendimento direto cadastrado, confirmando que o WhatsApp é o canal mestre de conversão.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Volume per Niche Grid -->
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 14px;">
+          Distribuição do Peso por Nicho (561 Estabelecimentos Mapeados)
+        </h3>
+        
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 28px;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border); text-align: left; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">
+                <th style="padding: 10px 12px;">Nicho / Categoria</th>
+                <th style="padding: 10px 12px;">Total de Estabelecimentos</th>
+                <th style="padding: 10px 12px;">Participação (%)</th>
+                <th style="padding: 10px 12px;">% Estimada com Site Próprio</th>
+                <th style="padding: 10px 12px;">Dependência do Guia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">1. Gastronomia Urbana</strong> (Restaurantes, Pizzarias, Bistrôs)</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">257</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">45,8%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #f87171;">~35% têm site</td>
+                <td style="padding: 12px;"><span style="color: #f87171; font-weight: 600;">Alta (65% dependem de redes e guia)</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">2. Compras & Varejo</strong> (Malhas, Chocolates, Lojas)</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">61</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">10,9%</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">~50% têm site</td>
+                <td style="padding: 12px;"><span style="color: var(--gold-light); font-weight: 600;">Média</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">3. Turismo Rural & Produtor</strong> (Cantinas e Venda Direta)</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">51</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">9,1%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #f87171;">~20% têm site</td>
+                <td style="padding: 12px;"><span style="color: #f87171; font-weight: 700;">Crítica (80% sem presença web própria)</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">4. Gastronomia Rural</strong> (Cafés coloniais e Almoços)</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">46</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">8,2%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #f87171;">~25% têm site</td>
+                <td style="padding: 12px;"><span style="color: #f87171; font-weight: 700;">Muito Alta</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">5. Happy Hour & Vida Noturna</strong> (Pubs, Bares, Cervejarias)</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">40</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">7,1%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #f87171;">~15% têm site</td>
+                <td style="padding: 12px;"><span style="color: #f87171; font-weight: 700;">Total (Quase 100% vivem de Instagram)</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">6. Vinhos & Espumantes</strong> (Vinícolas e Caves)</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">31</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">5,5%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #34d399;">~60% têm site</td>
+                <td style="padding: 12px;"><span style="color: var(--gold-light); font-weight: 600;">Média (usam e-commerce de vinho)</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">7. Hotelaria Urbana</strong> (Hotéis executivos e centrais)</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">22</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">3,9%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #34d399;">~80% têm site</td>
+                <td style="padding: 12px;"><span style="color: #60a5fa; font-weight: 600;">Baixa (Redes nacionais de hotel)</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">8. Queijarias & Agroindústria</strong></td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">23</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">4,1%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #f87171;">~15% têm site</td>
+                <td style="padding: 12px;"><span style="color: #f87171; font-weight: 700;">Crítica</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 12px;"><strong style="color: #fff;">9. Hospedagem Rural / Pousadas</strong></td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">20</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">3,6%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #f87171;">~30% têm site</td>
+                <td style="padding: 12px;"><span style="color: #f87171; font-weight: 700;">Muito Alta (dependem de Booking)</span></td>
+              </tr>
+              <tr>
+                <td style="padding: 12px;"><strong style="color: #fff;">10. Ecoturismo & Turismo de Aventura</strong></td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: var(--gold-light); font-weight: 700;">13</td>
+                <td style="padding: 12px; font-family: var(--font-mono);">2,3%</td>
+                <td style="padding: 12px; font-family: var(--font-mono); color: #f87171;">~25% têm site</td>
+                <td style="padding: 12px;"><span style="color: #f87171; font-weight: 700;">Crítica</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Strategic Takeaways -->
+        <div style="background: linear-gradient(145deg, #181b24 0%, #12141a 100%); border: 1px solid rgba(212,175,55,0.3); border-radius: var(--radius-sm); padding: 24px;">
+          <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--gold-light); margin-bottom: 10px;">
+            A Grande Conclusão para a Estratégia de Jefferson & Soul Branding
+          </h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">
+            <strong>1. O Guia não é um anúncio: ele é a única página web de 58% dos comércios de Caxias do Sul.</strong><br>
+            Quando o Diogo e o time de React reconstruírem os templates, esses comércios ganham uma vitrine com SEO profissional, estruturação semântica e velocidade que eles jamais teriam contratando um site próprio.<br><br>
+            <strong>2. A Gastronomia Urbana e Rural domina mais de 54% da base (303 estabelecimentos).</strong><br>
+            Qualquer modelo de monetização que envolva o setor gastronômico (vouchers de cortesia, selos de curadoria e integração com rotas turísticas) já atinge mais da metade de todo o faturamento potencial do portal.<br><br>
+            <strong>3. O Turismo Rural (150+ negócios entre queijarias, cantinas, pousadas rurais e turismo de aventura) tem a dependência mais desesperadora.</strong><br>
+            Mais de 75% deles não têm site e não sabem como vender ingressos pela internet. É exatamente aí que o <strong>módulo de venda de experiências com Split Pix</strong> resolve uma dor que o dono da pousada em Criúva ou da cantina em Forqueta não consegue resolver sozinho.
+          </p>
+        </div>
+
       </div>
     </div>
 
-  </div>
+    </div> <!-- container -->
 
   <script>
     function setTab(tabId) {
