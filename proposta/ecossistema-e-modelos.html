@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecossistema & Modelos de Negócio — Guia de Caxias do Sul</title>
+  <meta name="description" content="Mapeamento prático dos 5 nichos comerciais, simulação de split de experiências, motor de influenciadores e automação de agenda." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --surface: #13151b;
+      --card: #191c24;
+      --card-hover: #212530;
+      --subtle: #252a36;
+      --border: #282d3b;
+      --border-focus: #3d4559;
+
+      --wine: #8e2436;
+      --wine-light: #bc364e;
+      --wine-dim: rgba(142, 36, 54, 0.15);
+      
+      --gold: #d4af37;
+      --gold-light: #f5d168;
+      --gold-dim: rgba(212, 175, 55, 0.15);
+      
+      --green: #10b981;
+      --green-dim: rgba(16, 185, 129, 0.15);
+
+      --blue: #3b82f6;
+      --blue-dim: rgba(59, 130, 246, 0.15);
+
+      --text: #f0f3f8;
+      --text-muted: #8b93a4;
+      --text-dim: #5c6475;
+
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 30px 20px 80px;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+
+    /* ─── Top Bar ─── */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 36px;
+    }
+    .brand-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-tag::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--wine-light);
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .back-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+    .back-link:hover {
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* ─── Header ─── */
+    .header {
+      margin-bottom: 36px;
+    }
+    .title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.7;
+    }
+
+    /* ─── Navigation Tabs ─── */
+    .tabs {
+      display: flex;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .tab-btn {
+      padding: 12px 20px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: #fff; }
+    .tab-btn.active {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold-light);
+    }
+
+    .pane { display: none; animation: fadeIn 0.3s ease; }
+    .pane.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ─── Cards & Grids ─── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .card-h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .card-p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* ─── Nicho Grid ─── */
+    .nicho-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .nicho-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .nicho-card:hover {
+      border-color: var(--border-focus);
+      background: var(--card-hover);
+      transform: translateY(-2px);
+    }
+    .nicho-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .badge-gastro { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+    .badge-vinho { background: var(--wine-dim); color: var(--wine-light); }
+    .badge-hotel { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+    .badge-eco { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+    .badge-b2b { background: var(--gold-dim); color: var(--gold-light); }
+
+    .nicho-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .nicho-cases {
+      font-size: 0.82rem;
+      color: var(--gold-light);
+      font-family: var(--font-mono);
+      background: rgba(212, 175, 55, 0.06);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .nicho-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .nicho-action {
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      font-size: 0.82rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* ─── Simulator Split ─── */
+    .sim-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 860px) { .sim-container { grid-template-columns: 1fr; } }
+
+    .slider-group {
+      margin-bottom: 24px;
+    }
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .slider-val {
+      font-family: var(--font-mono);
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--subtle);
+      outline: none;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+
+    .preset-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .preset-btn {
+      padding: 6px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .preset-btn:hover, .preset-btn.active {
+      background: var(--wine-dim);
+      border-color: var(--wine-light);
+      color: #fff;
+    }
+
+    .split-box {
+      background: linear-gradient(145deg, #181b24 0%, #12141a 100%);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .split-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .split-row:last-child { border-bottom: none; }
+    .split-title { font-size: 0.88rem; font-weight: 600; color: var(--text-muted); }
+    .split-number { font-family: var(--font-mono); font-size: 1.15rem; font-weight: 700; }
+    .num-establishment { color: var(--green); }
+    .num-guia { color: var(--gold-light); }
+    .num-total { color: #fff; font-size: 1.4rem; }
+
+    /* ─── Comparison Boxes ─── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    @media (max-width: 760px) { .compare-grid { grid-template-columns: 1fr; } }
+
+    .box-bad {
+      background: rgba(239, 68, 68, 0.06);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+    }
+    .box-good {
+      background: rgba(16, 185, 129, 0.06);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+    }
+    .box-bad h4 { color: #f87171; margin-bottom: 8px; font-size: 0.95rem; }
+    .box-good h4 { color: #34d399; margin-bottom: 8px; font-size: 0.95rem; }
+    .box-bad p, .box-good p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* ─── Step Flow ─── */
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .step-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      position: relative;
+    }
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--wine);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .step-title { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .step-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="brand-tag">Onira Labs · Inteligência de Produto & Modelos de Negócio</div>
+      <a href="index.html" class="back-link">← Voltar para a Proposta Principal</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">Ecossistema Comercial & Modelos de Negócio</h1>
+      <p class="subtitle">
+        Como transformar o Guia de Caxias de um mero catálogo estático de anúncios em uma máquina viva de transações, parcerias com influenciadores e fluxos econômicos regionais.
+      </p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs">
+      <button class="tab-btn active" onclick="setTab('tab-nichos')">1. O Mapa dos 5 Nichos</button>
+      <button class="tab-btn" onclick="setTab('tab-split')">2. Venda de Experiências (Split)</button>
+      <button class="tab-btn" onclick="setTab('tab-whatsapp')">3. O Risco do WhatsApp & Influencers</button>
+      <button class="tab-btn" onclick="setTab('tab-passaporte')">4. O Passaporte Descomplicado</button>
+      <button class="tab-btn" onclick="setTab('tab-agenda')">5. Automação da Agenda</button>
+      <button class="tab-btn" onclick="setTab('tab-b2b')">6. Venda Direta vs Agências</button>
+    </nav>
+
+    <!-- TAB 1: OS 5 NICHOS -->
+    <div id="tab-nichos" class="pane active">
+      <div class="card">
+        <h2 class="card-h2">Mapeamento dos 5 Macro-Nichos (Dados Reais da Raspagem)</h2>
+        <p class="card-p">
+          Identificamos mais de 1.700 estabelecimentos cadastrados na base do portal. Cada nicho possui uma dor operacional distinta e requer um benefício tecnológico específico:
+        </p>
+
+        <div class="nicho-grid">
+          
+          <!-- Nicho 1 -->
+          <div class="nicho-card">
+            <div>
+              <span class="nicho-badge badge-gastro">Nicho 01 · Gastronomia Urbana</span>
+              <h3 class="nicho-title">Galeterias, Pizzarias & Bistrôs</h3>
+              <div class="nicho-cases">Ex: BaitaKão, Sebastiana, Di Paolo, Becco, Alligator, Quinta São Luiz</div>
+              <p class="nicho-desc">
+                Sofrem com <em>no-show</em> em reservas e não têm como saber quantos clientes o Guia traz.
+              </p>
+            </div>
+            <div class="nicho-action">
+              💡 <strong>Entrega Tecnológica:</strong> Vouchers com cortesia exclusiva de balcão e coleções assinadas por influenciadores locais.
+            </div>
+          </div>
+
+          <!-- Nicho 2 -->
+          <div class="nicho-card">
+            <div>
+              <span class="nicho-badge badge-vinho">Nicho 02 · Enoturismo Rural</span>
+              <h3 class="nicho-title">Cantinas, Vinícolas & Queijarias</h3>
+              <div class="nicho-cases">Ex: Forqueta, Linha 40, Fazenda Souza, Criúva</div>
+              <p class="nicho-desc">
+                Distantes do centro urbano. Dependem de que o turista chegue de carro para comprar no balcão.
+              </p>
+            </div>
+            <div class="nicho-action">
+              💡 <strong>Entrega Tecnológica:</strong> Venda antecipada de degustações e piqueniques com Split Pix direto na conta.
+            </div>
+          </div>
+
+          <!-- Nicho 3 -->
+          <div class="nicho-card">
+            <div>
+              <span class="nicho-badge badge-hotel">Nicho 03 · Hotelaria & Pousadas</span>
+              <h3 class="nicho-title">Hotéis Centrais & Pousadas Rurais</h3>
+              <div class="nicho-cases">Ex: Hotéis de negócios em São Pelegrino vs Pousadas de charme no interior</div>
+              <p class="nicho-desc">
+                Pagam entre 15% e 25% de comissão abusiva para Booking e plataformas globais.
+              </p>
+            </div>
+            <div class="nicho-action">
+              💡 <strong>Entrega Tecnológica:</strong> Canal direto de reserva sem comissão para o hotel, oferecendo upgrade ou brinde para quem reserva pelo Guia.
+            </div>
+          </div>
+
+          <!-- Nicho 4 -->
+          <div class="nicho-card">
+            <div>
+              <span class="nicho-badge badge-eco">Nicho 04 · Ecoturismo & Aventura</span>
+              <h3 class="nicho-title">Cânions, Parques & Trilhas</h3>
+              <div class="nicho-cases">Ex: Cânion dos Palhaços (Criúva), Cascatas de Galópolis, Parques</div>
+              <p class="nicho-desc">
+                Atendimento manual caótico no WhatsApp. Vagas limitadas por dia que se perdem por falta de agendamento prévio.
+              </p>
+            </div>
+            <div class="nicho-action">
+              💡 <strong>Entrega Tecnológica:</strong> Calendário simples de vagas diárias com compra de ingresso/passeio antecipado.
+            </div>
+          </div>
+
+          <!-- Nicho 5 -->
+          <div class="nicho-card">
+            <div>
+              <span class="nicho-badge badge-b2b">Nicho 05 · Receptivo & B2B</span>
+              <h3 class="nicho-title">Agências Receptivas & Guias</h3>
+              <div class="nicho-cases">Ex: Convention Bureau, Vans, City Tours, Congressos da CIC</div>
+              <p class="nicho-desc">
+                Falta um catálogo unificado para vender pacotes consolidados para turistas que desembarcam de Porto Alegre ou SP.
+              </p>
+            </div>
+            <div class="nicho-action">
+              💡 <strong>Entrega Tecnológica:</strong> Portal de tarifário B2B onde agências compram pacotes de atrativos em lote com tarifa de operadora.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: SIMULADOR DE SPLIT -->
+    <div id="tab-split" class="pane">
+      <div class="card">
+        <h2 class="card-h2">Simulador de Split de Pagamento (Venda de Experiências)</h2>
+        <p class="card-p">
+          Veja como funciona na prática financeira: o turista paga no site via Pix ou Cartão, e o dinheiro é dividido automaticamente na fonte pelo gateway (sem bitributação e sem trabalho de repasse manual).
+        </p>
+
+        <div class="sim-container">
+          <div>
+            <div class="preset-pills">
+              <button class="preset-btn active" onclick="applyPreset(120, 'Degustação em Vinícola Familiar')">Degustação em Vinícola (R$ 120)</button>
+              <button class="preset-btn" onclick="applyPreset(160, 'Almoço Colonial com Vinhos')">Almoço Colonial (R$ 160)</button>
+              <button class="preset-btn" onclick="applyPreset(90, 'Passeio de Aventura em Criúva')">Aventura em Criúva (R$ 90)</button>
+              <button class="preset-btn" onclick="applyPreset(220, 'Experiência Completa com Piquenique')">Piquenique nas Caves (R$ 220)</button>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <span>Valor Unitário da Experiência</span>
+                <span class="slider-val" id="val-price">R$ 120,00</span>
+              </div>
+              <input type="range" id="input-price" min="50" max="400" step="10" value="120" oninput="updateSplit()" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <span>Taxa de Intermediação do Guia</span>
+                <span class="slider-val" id="val-tax">10%</span>
+              </div>
+              <input type="range" id="input-tax" min="5" max="20" step="1" value="10" oninput="updateSplit()" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <span>Volume Estimado de Vouchers / Mês</span>
+                <span class="slider-val" id="val-vol">150 vouchers</span>
+              </div>
+              <input type="range" id="input-vol" min="20" max="800" step="10" value="150" oninput="updateSplit()" />
+            </div>
+          </div>
+
+          <div>
+            <div class="split-box">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; margin-bottom: 14px;">Divisão por Voucher Unitário</div>
+              
+              <div class="split-row">
+                <div class="split-title">Repasse Direto ao Estabelecimento</div>
+                <div class="split-number num-establishment" id="split-establishment">R$ 108,00</div>
+              </div>
+
+              <div class="split-row">
+                <div class="split-title">Comissão Retida pelo Guia</div>
+                <div class="split-number num-guia" id="split-guia">R$ 12,00</div>
+              </div>
+
+              <div class="split-row">
+                <div class="split-title">Total Pago pelo Turista</div>
+                <div class="split-number num-total" id="split-total">R$ 120,00</div>
+              </div>
+
+              <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border);">
+                <div style="font-size: 0.8rem; font-weight: 700; color: #fff; text-transform: uppercase; margin-bottom: 8px;">Projeção Mensal Recorrente para o Guia</div>
+                <div style="font-family: var(--font-mono); font-size: 1.8rem; font-weight: 800; color: var(--gold-light);" id="proj-monthly">R$ 1.800,00 / mês</div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px;">
+                  Com 150 experiências vendidas/mês na rede. O Guia não comprou estoque e não atendeu telefone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 3: WHATSAPP & INFLUENCERS -->
+    <div id="tab-whatsapp" class="pane">
+      <div class="card">
+        <h2 class="card-h2">Desarmando o "Tiro no Pé": O Risco de Trackear Cliques Vazios</h2>
+        <p class="card-p">
+          Sua preocupação é perfeita: se colocarmos um relatório de cliques e o restaurante ver apenas 5 cliques no mês, ele cancela. Veja como transformar isso em uma alavanca que gera valor real:
+        </p>
+
+        <div class="compare-grid">
+          
+          <div class="box-bad">
+            <h4>❌ O Erro Clássico (O Tiro no Pé)</h4>
+            <p>
+              • Vender "clique frio" como se fosse Google Ads.<br>
+              • Mostrar um painel com "3 cliques no mês".<br>
+              • O anunciante acha o Guia inútil e cancela.<br>
+              • O visitante clica por curiosidade e fecha o WhatsApp sem falar nada.
+            </p>
+          </div>
+
+          <div class="box-good">
+            <h4>✓ A Abordagem Estratégica (Lead Qualificado)</h4>
+            <p>
+              • <strong>Mensagem de Balcão:</strong> O botão preenche: <em>"Olá! Vi a recomendação no Guia de Caxias e queria reservar com a cortesia de sobremesa"</em>.<br>
+              • <strong>Sensação Real de Venda:</strong> O dono não vê estatística fria; ele vê clientes reais chegando com a frase do Guia.<br>
+              • O comerciante renova porque o cliente entrou pela porta dele.
+            </p>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px;">
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--gold-light); margin-bottom: 10px;">
+            O Motor de Influenciadores Locais: Tráfego Compartilhado
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+            Em vez de gastar verba com anúncios no Facebook, o Guia convida criadores de conteúdo gastronômico e cultural da Serra Gaúcha para terem <strong>Coleções Oficiais no Guia</strong>:
+          </p>
+
+          <div class="flow-steps">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div class="step-title">Curadoria Assinada</div>
+              <div class="step-desc">O influenciador ganha a página: <em>"Os 5 Restaurantes Favoritos por @fulano"</em>.</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div class="step-title">Injeção de Tráfego</div>
+              <div class="step-desc">Ele posta nos Stories: <em>"Saiu meu roteiro exclusivo no Guia de Caxias, link na bio"</em>.</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div class="step-title">Parceria Ganha-Ganha</div>
+              <div class="step-desc">O Guia ganha milhares de visitas qualificadas de graça; o influencer ganha autoridade cultural.</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">4</div>
+              <div class="step-title">Comissão Afiliada</div>
+              <div class="step-desc">Se vender um voucher de passeio pelo link dele, o criador ganha uma fatia da comissão.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 4: PASSAPORTE CULTURAL -->
+    <div id="tab-passaporte" class="pane">
+      <div class="card">
+        <h2 class="card-h2">Como o "Passaporte Cultural" Funciona na Vida Real?</h2>
+        <p class="card-p">
+          Nada de aplicativo pesado ou geolocalização complexa que ninguém usa. O passaporte é um <strong>Circuito Integrado de Vantagens</strong> que conecta a pesquisa da Lei Rouanet aos restaurantes e pousadas da mesma rua:
+        </p>
+
+        <div class="flow-steps">
+          
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-title">Turista Lê a Lenda</div>
+            <div class="step-desc">
+              O visitante acessa a nova página da Lei Rouanet sobre a <strong>Capela dos Ex-Votos</strong> ou o <strong>Lanifício São Pedro em Galópolis</strong>.
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-title">Chamada de Circuito</div>
+            <div class="step-desc">
+              Abaixo do texto, um card sugere: <em>"Visite o Café Colonial X (a 300m daqui) e ganhe uma taça de boas-vindas com o passe do Guia"</em>.
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-title">Emissão Instantânea</div>
+            <div class="step-desc">
+              Com 1 toque, ele gera o passe visual no navegador (com código de 4 dígitos ou QR code simples). Sem cadastro demorado.
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-title">Consumo no Balcão</div>
+            <div class="step-desc">
+              Ele consome R$ 180 no restaurante e apresenta o passe. O restaurante ganha o cliente e paga a mensalidade do Guia com prazer.
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 24px; padding: 20px; background: rgba(212, 175, 55, 0.08); border-left: 4px solid var(--gold); border-radius: 4px;">
+          <strong style="color: var(--gold-light);">O Valor para a Lei Rouanet:</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+            A prestação de contas do edital cultural ganha uma métrica imbatível: comprova que o investimento público em pesquisa histórica gerou impacto financeiro e گردش econômico direto para os pequenos comércios do interior de Caxias.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: AGENDA DE EVENTOS -->
+    <div id="tab-agenda" class="pane">
+      <div class="card">
+        <h2 class="card-h2">Resolvendo a Incerteza da Agenda de Eventos</h2>
+        <p class="card-p">
+          Promotores esquecem de enviar, mandam fotos distorcidas na sexta-feira ou atrasam informações. Veja como a arquitetura do front-end resolve esse gargalo:
+        </p>
+
+        <div class="nicho-grid">
+          
+          <div class="nicho-card">
+            <div>
+              <span class="nicho-badge badge-b2b">Solução 01 · Formulário Blindado</span>
+              <h3 class="nicho-title">Self-Service com Validação</h3>
+              <p class="nicho-desc">
+                O promotor só consegue enviar se preencher data, hora, classificação etária, link de ingressos e foto na proporção correta (16:9). Se faltar dado, o sistema não aceita. Cai em fila de 1 clique ("Aprovar").
+              </p>
+            </div>
+          </div>
+
+          <div class="nicho-card">
+            <div>
+              <span class="nicho-badge badge-hotel">Solução 02 · Monitoramento Automático</span>
+              <h3 class="nicho-title">Scraper de Pautas Oficiais</h3>
+              <p class="nicho-desc">
+                Scripts leves que varrem semanalmente a agenda da Prefeitura de Caxias, UCS Teatro, Teatro Murialdo e eventos públicos da CIC, criando rascunhos automáticos para a redação apenas revisar.
+              </p>
+            </div>
+          </div>
+
+          <div class="nicho-card">
+            <div>
+              <span class="nicho-badge badge-eco">Solução 03 · Canal VIP WhatsApp</span>
+              <h3 class="nicho-title">Ingestão por Mensageria</h3>
+              <p class="nicho-desc">
+                Um fluxo simples onde os maiores promotores (shows da Festa da Uva, festivais de blues) encaminham o release pelo WhatsApp, e um robô extrai os dados estruturados direto para o CMS do Diogo.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: B2B vs B2C -->
+    <div id="tab-b2b" class="pane">
+      <div class="card">
+        <h2 class="card-h2">Venda Direta para o Público (B2C) vs Venda para Agências (B2B)</h2>
+        <p class="card-p">
+          O Guia pode operar em duas camadas comerciais simultâneas, multiplicando sua receita:
+        </p>
+
+        <div class="compare-grid">
+          
+          <div class="nicho-card" style="background: var(--surface);">
+            <span class="nicho-badge badge-vinho">Canal B2C · Público Geral & Turista</span>
+            <h3 class="nicho-title">Venda Unitária de Vouchers</h3>
+            <p class="nicho-desc">
+              • O turista ou casal que está na serra compra 1 almoço colonial ou 1 piquenique.<br>
+              • Pagamento via Pix ou Cartão com confirmação em segundos.<br>
+              • Alta margem de intermediação (8% a 12%).<br>
+              • Alimentado pela navegação do site e pelos links dos influenciadores.
+            </p>
+          </div>
+
+          <div class="nicho-card" style="background: var(--surface);">
+            <span class="nicho-badge badge-b2b">Canal B2B · Agências Receptivas & Eventos</span>
+            <h3 class="nicho-title">Venda Corporativa em Lote</h3>
+            <p class="nicho-desc">
+              • Agências de turismo de Porto Alegre, Curitiba e SP que trazem grupos em vans.<br>
+              • Congressos da CIC Caxias e Convention Bureau que precisam organizar jantares para 40 executivos.<br>
+              • O Guia fornece a plataforma de <strong>Tarifa Operadora (NET)</strong>, faturando pacotes consolidados em volume.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function setTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+
+      const btn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (btn) btn.classList.add('active');
+
+      const pane = document.getElementById(tabId);
+      if (pane) pane.classList.add('active');
+    }
+
+    function applyPreset(price, name) {
+      document.getElementById('input-price').value = price;
+      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+      const btn = Array.from(document.querySelectorAll('.preset-btn')).find(b => b.innerText.includes(price));
+      if (btn) btn.classList.add('active');
+      updateSplit();
+    }
+
+    function updateSplit() {
+      const price = parseFloat(document.getElementById('input-price').value);
+      const taxPercent = parseFloat(document.getElementById('input-tax').value);
+      const volume = parseInt(document.getElementById('input-vol').value);
+
+      document.getElementById('val-price').innerText = 'R$ ' + price.toFixed(2).replace('.', ',');
+      document.getElementById('val-tax').innerText = taxPercent + '%';
+      document.getElementById('val-vol').innerText = volume + ' vouchers';
+
+      const guiaCut = price * (taxPercent / 100);
+      const estabCut = price - guiaCut;
+      const monthlyIncome = guiaCut * volume;
+
+      document.getElementById('split-establishment').innerText = 'R$ ' + estabCut.toFixed(2).replace('.', ',');
+      document.getElementById('split-guia').innerText = 'R$ ' + guiaCut.toFixed(2).replace('.', ',');
+      document.getElementById('split-total').innerText = 'R$ ' + price.toFixed(2).replace('.', ',');
+      document.getElementById('proj-monthly').innerText = 'R$ ' + monthlyIncome.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) + ' / mês';
+    }
+
+    updateSplit();
+  </script>
+</body>
+</html>
