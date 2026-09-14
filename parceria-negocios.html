@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parceria Tríplice: Guia de Caxias + Soul Branding + Onira Labs</title>
+  <meta name="description" content="Mapeamento de modelos de negócio e oportunidades de receita conjunta entre o Guia de Caxias do Sul, a Soul Branding e a Onira Labs." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #090a0d;
+      --surface: #12141a;
+      --card: #181b24;
+      --card-hover: #202430;
+      --border: #262b38;
+      
+      --wine: #942b3b;
+      --wine-light: #c13d52;
+      --wine-dim: rgba(148, 43, 59, 0.15);
+      
+      --gold: #d4af37;
+      --gold-light: #f5d168;
+      --gold-dim: rgba(212, 175, 55, 0.15);
+
+      --green: #10b981;
+      --green-dim: rgba(16, 185, 129, 0.15);
+      
+      --blue: #3b82f6;
+      --blue-dim: rgba(59, 130, 246, 0.15);
+
+      --text: #f0f3f8;
+      --text-muted: #8c95a6;
+
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      padding: 0 0 80px;
+    }
+
+    /* ─── Persistent Unified Top Navigation Bar ─── */
+    .unified-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(12, 13, 16, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .unified-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-brand .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--wine-light);
+      box-shadow: 0 0 8px var(--wine-light);
+    }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .nav-link {
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-link:hover {
+      color: #fff;
+      background: var(--surface);
+    }
+    .nav-link.active {
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 36px auto 0;
+      padding: 0 20px;
+    }
+
+    /* ─── Header ─── */
+    .header {
+      margin-bottom: 40px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      background: var(--gold-dim);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+    .title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.7;
+    }
+
+    /* ─── The Triad Grid ─── */
+    .triad-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .triad-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .triad-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      display: inline-block;
+      letter-spacing: 0.05em;
+    }
+    .badge-guia { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+    .badge-soul { background: var(--wine-dim); color: var(--wine-light); }
+    .badge-onira { background: var(--gold-dim); color: var(--gold-light); }
+
+    .triad-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .triad-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+    .triad-list li strong { color: #fff; }
+
+    /* ─── Business Models Grid ─── */
+    .section-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      margin-bottom: 36px;
+    }
+    .box-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .box-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) { .models-grid { grid-template-columns: 1fr; } }
+
+    .model-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      transition: all 0.2s ease;
+    }
+    .model-item:hover {
+      border-color: var(--border-focus);
+      background: var(--card-hover);
+      transform: translateY(-2px);
+    }
+    .model-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .model-num {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .model-item h4 {
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .model-item p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .rev-split {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+    .rev-split strong { color: var(--gold-light); }
+
+    /* ─── Next Steps ─── */
+    .cta-banner {
+      background: linear-gradient(145deg, #181c26 0%, #12141c 100%);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: var(--radius);
+      padding: 36px;
+      text-align: center;
+    }
+    .cta-banner h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 24px;
+      line-height: 1.7;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #111;
+    }
+    .btn-outline {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Persistent Unified Navigation -->
+  <nav class="unified-nav">
+    <div class="unified-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="dot"></span>
+        <span>Guia de Caxias · Dossiê Estratégico</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">01. Dossiê & Proposta UI/UX</a>
+        <a href="dados.html" class="nav-link">02. Auditoria de Dados (561 Empresas)</a>
+        <a href="parceria-negocios.html" class="nav-link active">03. Parceria Tríplice & Modelos</a>
+        <a href="proposta/index.html" class="nav-link">04. Simulador Figma</a>
+        <a href="proposta/ecossistema-e-modelos.html" class="nav-link">05. Simulador Split Pix</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <span class="tag">Aliança Estratégica Regional</span>
+      <h1 class="title">Parceria Tríplice: Guia de Caxias + Soul Branding + Onira Labs</h1>
+      <p class="subtitle">
+        Como unir a <strong>autoridade histórica de 20 anos do Guia</strong>, o <strong>branding estratégico e projetos culturais da Soul</strong> e a <strong>tecnologia de canais próprios da Onira</strong> para construir um ecossistema digital altamente rentável na Serra Gaúcha.
+      </p>
+    </header>
+
+    <!-- The Triad -->
+    <div class="triad-grid">
+      
+      <!-- Guia de Caxias -->
+      <div class="triad-card">
+        <div>
+          <span class="triad-badge badge-guia">O Ativo Territorial</span>
+          <h3>Guia de Caxias do Sul</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            20 anos de tradição (desde 2006). Relações institucionais de peso com CIC Caxias, SEGH Uva e Vinho, Convention Bureau e Secretaria de Turismo.
+          </p>
+          <ul class="triad-list">
+            <li><strong>Papel:</strong> Canal oficial, credibilidade territorial e base de clientes.</li>
+            <li><strong>Ativo:</strong> 1.700+ empresas cadastradas e 12 distritos mapeados.</li>
+            <li><strong>Gargalo Atual:</strong> Tecnologia parada no modelo de classificados de 2010.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Soul Branding -->
+      <div class="triad-card">
+        <div>
+          <span class="triad-badge badge-soul">A Inteligência de Marca</span>
+          <h3>Soul Branding</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            Planejamento estratégico de alto nível, consultoria de posicionamento, captação via Lei Rouanet e interlocução institucional.
+          </p>
+          <ul class="triad-list">
+            <li><strong>Papel:</strong> Curadoria cultural, narrativa de marca e novos editais.</li>
+            <li><strong>Ativo:</strong> Conexão direta com a diretoria do Guia e captação Rouanet.</li>
+            <li><strong>Objetivo:</strong> Elevar o contrato de "redesenho de tela" para parceria estratégica contínua.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Onira Labs -->
+      <div class="triad-card">
+        <div>
+          <span class="triad-badge badge-onira">A Engenharia & Produto</span>
+          <h3>Onira Labs (Jeff Motta)</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            Arquitetura de UI/UX, Design System pronto para React (Diogo), canais próprios sem comissão (Onira.fly) e esteiras B2B (Onira.pro).
+          </p>
+          <ul class="triad-list">
+            <li><strong>Papel:</strong> Infraestrutura técnica, handoff Figma → React, automações e split.</li>
+            <li><strong>Ativo:</strong> Plataformas próprias já rodando com clientes locais da serra.</li>
+            <li><strong>Objetivo:</strong> Fornecer a esteira tecnológica que monetiza o tráfego do portal.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 4 Shared Business Models -->
+    <div class="section-box">
+      <h2 class="box-title">4 Modelos de Negócio Ativados pela Parceria Tríplice</h2>
+      <p class="box-desc">
+        A Lei Rouanet constrói o chassi e financia a transição para React. A parceria comercial opera as 4 alavancas que sustentam o portal no longo prazo:
+      </p>
+
+      <div class="models-grid">
+        
+        <!-- Modelo 1 -->
+        <div class="model-item">
+          <div class="model-header">
+            <span class="model-num">MODELO 01 · B2C TRANSACIONAL</span>
+            <span style="font-size: 0.72rem; color: var(--green); font-weight: 700;">Split Automático Pix</span>
+          </div>
+          <h4>Venda de Experiências & Ticketing Turístico</h4>
+          <p>
+            Venda antecipada de almoços coloniais, piqueniques em cantinas, degustações de vinícolas e ingressos de turismo rural direto no portal, com checkout leve via Pix.
+          </p>
+          <div class="rev-split">
+            💰 <strong>Divisão sugerida:</strong> 90% Estabelecimento · 6% Guia de Caxias · 2% Soul Branding · 2% Onira Labs (Tecnologia).
+          </div>
+        </div>
+
+        <!-- Modelo 2 -->
+        <div class="model-item">
+          <div class="model-header">
+            <span class="model-num">MODELO 02 · GASTRONOMIA</span>
+            <span style="font-size: 0.72rem; color: var(--wine-light); font-weight: 700;">Zero Taxa iFood</span>
+          </div>
+          <h4>Hub de Canais Próprios (Onira.fly no Guia)</h4>
+          <p>
+            Mais de 300 restaurantes e pizzarias de Caxias são reféns dos 12% a 27% do iFood. O Guia oferece o <em>Onira.fly</em> como cardápio digital oficial: o pedido cai direto no WhatsApp do restaurante sem comissões abusivas.
+          </p>
+          <div class="rev-split">
+            💰 <strong>Receita:</strong> Mensalidade recorrente (MRR R$ 120/mês por restaurante participante), gerando caixa previsível compartilhado.
+          </div>
+        </div>
+
+        <!-- Modelo 3 -->
+        <div class="model-item">
+          <div class="model-header">
+            <span class="model-num">MODELO 03 · B2B REGIONAL</span>
+            <span style="font-size: 0.72rem; color: var(--blue); font-weight: 700;">Atacado PJ</span>
+          </div>
+          <h4>Esteira de Abastecimento Regional (Onira.pro)</h4>
+          <p>
+            Caxias tem mais de 70 vinícolas, queijarias e produtores rurais nos distritos. Eles precisam vender em caixas para os hotéis e restaurantes urbanos. O <em>Onira.pro</em> atua como portal B2B de faturamento e cotações PJ.
+          </p>
+          <div class="rev-split">
+            💰 <strong>Receita:</strong> Taxa de intermediação sobre transações de fardos e compras em lote para o trade turístico.
+          </div>
+        </div>
+
+        <!-- Modelo 4 -->
+        <div class="model-item">
+          <div class="model-header">
+            <span class="model-num">MODELO 04 · CURADORIA</span>
+            <span style="font-size: 0.72rem; color: var(--gold-light); font-weight: 700;">Tráfego Orgânico</span>
+          </div>
+          <h4>Roteiros & Coleções com Influenciadores da Serra</h4>
+          <p>
+            Parcerias com criadores de conteúdo gastronômico e cultural de Caxias do Sul para assinar roteiros exclusivos dentro do Guia, injetando milhares de visitantes qualificados sem custo de anúncios pagos.
+          </p>
+          <div class="rev-split">
+            💰 <strong>Métrica:</strong> Conversão comprovada no balcão via mensagens contextuais de WhatsApp com cortesias do Guia.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA & Pitch Deck Links -->
+    <div class="cta-banner">
+      <h3>Dossiê Completo para a Reunião com Mateus Loreto</h3>
+      <p>
+        Navegue pelos outros módulos para revisar a proposta formal de design dos blocos A, B, C e D ou conferir os gráficos detalhados da auditoria de dados.
+      </p>
+      <div class="btn-group">
+        <a href="index.html" class="btn btn-gold">Ver Proposta Comercial (Figma/React)</a>
+        <a href="dados.html" class="btn btn-outline">Ver Auditoria de Dados (561 Empresas)</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

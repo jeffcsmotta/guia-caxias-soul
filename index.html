@@ -276,14 +276,86 @@
       text-align: center;
       padding-top: 40px;
       border-top: 1px solid var(--border);
+    /* ─── Persistent Unified Top Navigation Bar ─── */
+    .unified-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(12, 13, 16, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .unified-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-brand .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--wine-light);
+      box-shadow: 0 0 8px var(--wine-light);
+    }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .nav-link {
+      padding: 8px 14px;
       font-size: 0.85rem;
+      font-weight: 600;
       color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-link:hover {
+      color: #fff;
+      background: var(--surface);
+    }
+    .nav-link.active {
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.25);
     }
   </style>
 </head>
-<body>
+<body style="padding-top: 0;">
 
-  <div class="container">
+  <!-- Persistent Unified Navigation -->
+  <nav class="unified-nav">
+    <div class="unified-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="dot"></span>
+        <span>Guia de Caxias · Dossiê Estratégico</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">01. Dossiê & Proposta UI/UX</a>
+        <a href="dados.html" class="nav-link">02. Auditoria de Dados (561 Empresas)</a>
+        <a href="parceria-negocios.html" class="nav-link">03. Parceria Tríplice & Modelos</a>
+        <a href="proposta/index.html" class="nav-link">04. Simulador Figma</a>
+        <a href="proposta/ecossistema-e-modelos.html" class="nav-link">05. Simulador Split Pix</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 36px;">
 
     <!-- Topbar -->
     <div class="topbar">
