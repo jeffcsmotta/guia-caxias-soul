@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Apresentação Executiva — O Hub Regional de Caxias do Sul</title>
+  <style>
+    @page {
+      size: A4 landscape;
+      margin: 12mm 14mm 12mm 14mm;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .slide {
+      height: 180mm;
+      max-height: 180mm;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10mm 12mm;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      position: relative;
+      background: #ffffff;
+    }
+    .slide-header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .slide-title {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+    .slide-tag {
+      font-size: 9.5pt;
+      color: #2563eb;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 12px 0;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+    .card h3 {
+      font-size: 12pt;
+      color: #0f172a;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+    }
+    .card p, .card li {
+      font-size: 10pt;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .highlight-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+    .highlight-card h3 {
+      color: #1d4ed8;
+    }
+    .dark-card {
+      background: #0f172a;
+      color: #f8fafc;
+      border: 1px solid #1e293b;
+    }
+    .dark-card h3 {
+      color: #60a5fa;
+    }
+    .dark-card p, .dark-card li {
+      color: #cbd5e1;
+    }
+    .stat-number {
+      font-size: 24pt;
+      font-weight: 900;
+      color: #2563eb;
+      margin-bottom: 4px;
+    }
+    .slide-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8.5pt;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: CAPA -->
+  <div class="slide" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff;">
+    <div style="text-align: right; font-size: 10pt; color: #94a3b8;">
+      ESTUDO ESTRATÉGICO & PROVOCAÇÃO DE NEGÓCIO
+    </div>
+    <div class="slide-body" style="justify-content: center; align-items: flex-start;">
+      <div style="font-size: 11pt; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;">
+        Onira Labs × Soul Branding
+      </div>
+      <h1 style="font-size: 28pt; font-weight: 900; margin: 0 0 16px 0; line-height: 1.15; color: #ffffff;">
+        Do Acervo Estático ao Território Ativo
+      </h1>
+      <p style="font-size: 13pt; color: #cbd5e1; max-width: 800px; line-height: 1.6; margin: 0 0 24px 0;">
+        Como transformar a chancela histórica de <strong>Patrimônios, Marcos e Lendas</strong> na infraestrutura de ativação turística e gastronômica de Caxias do Sul — inspirada no modelo do Vale dos Vinhedos e rotas europeias.
+      </p>
+      <div style="font-size: 10pt; color: #94a3b8;">
+        Apresentação Executiva | Jefferson Motta
+      </div>
+    </div>
+    <div class="slide-footer" style="border-color: #334155; color: #64748b;">
+      <span>Confidencial — Material de Alinhamento Estratégico</span>
+      <span>Setembro / 2026</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: O DIAGNÓSTICO -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">1. O Diagnóstico: Onde o Google Falha no Interior</h2>
+      <span class="slide-tag">Raio-X de Dados Reais</span>
+    </div>
+    <div class="slide-body">
+      <div class="grid-3">
+        <div class="card">
+          <div class="stat-number">1.700+</div>
+          <h3>Estabelecimentos Catalogados</h3>
+          <p>A base do Guia de Caxias tem um acervo monumental na área urbana e nos 12 distritos rurais. Um patrimônio de informações valiosíssimo, porém estático.</p>
+        </div>
+        <div class="card highlight-card">
+          <div class="stat-number" style="color: #dc2626;">0%</div>
+          <h3>Dados Estruturados para IA</h3>
+          <p>O Google e os assistentes de IA são cegos para o interior real. Se uma família busca <em>"almoço colonial com polenta no domingo em Criúva"</em>, encontra links antigos ou PDFs quebrados.</p>
+        </div>
+        <div class="card">
+          <div class="stat-number">100%</div>
+          <h3>Dependência de Redes Sociais</h3>
+          <p>O turismo do interior hoje sobrevive de Stories efêmeros no Instagram e indicação boca a boca de influenciadores, sem um hub oficial organizado.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Onira Labs — Dados obtidos via auditoria analítica da base do portal</span>
+      <span>Slide 2</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: O BENCHMARK EUROPEU E VALE DOS VINHEDOS -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">2. Benchmark: Como a Toscana e o Vale dos Vinhedos Operam</h2>
+      <span class="slide-tag">Modelagem de Negócio</span>
+    </div>
+    <div class="slide-body">
+      <div class="grid-2">
+        <div class="card">
+          <h3>O Modelo de Sucesso Europeu (DMO Híbrido)</h3>
+          <ul>
+            <li><strong>Fomento Público / Cultura:</strong> Paga a pesquisa, catalogação patrimonial, acessibilidade e infraestrutura de dados abertos.</li>
+            <li><strong>Consórcio Empresarial (Trade):</strong> Hotéis, cantinas e queijarias participam de um hub centralizado que combate as taxas de 20% das multinacionais (Booking/iFood).</li>
+            <li><strong>Roteiros de Experiência:</strong> O visitante não compra apenas uma diária; compra o "Circuito das Capelas e Cantinas".</li>
+          </ul>
+        </div>
+        <div class="card highlight-card">
+          <h3>A Oportunidade Única de Caxias do Sul</h3>
+          <p>Caxias do Sul possui um patrimônio cultural e rural tão rico quanto Bento Gonçalves e Gramado, mas descentralizado.</p>
+          <p><strong>A virada de chave:</strong> Unir o fomento cultural da Rouanet (que pesquisa os marcos e lendas) com a força institucional da Marivânia (SEGH / Trade) para erguermos a <strong>régua digital do empresário local</strong>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Referência: Destination Management Organizations (Itália e Espanha)</span>
+      <span>Slide 3</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: O HUB DE ATIVAÇÃO -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">3. A Arquitetura do Hub: Unindo Rouanet, TI e Negócios</h2>
+      <span class="slide-tag">Visão de Sistema</span>
+    </div>
+    <div class="slide-body">
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. O Acervo Cultural (Rouanet)</h3>
+          <p>Pesquisa histórica de excelência, lendas dos imigrantes e patrimônio material nos distritos. Cria autoridade e relevância pública para o portal.</p>
+        </div>
+        <div class="card dark-card">
+          <h3>2. A Engenharia React (Diogo)</h3>
+          <p>O Design System entrega componentes padronizados e acessíveis (WCAG 2.1 AA) que modernizam todo o portal sem retrabalho técnico.</p>
+        </div>
+        <div class="card highlight-card">
+          <h3>3. O Hub Comercial (SEGH / Trade)</h3>
+          <p>Cards de experiência em torno dos monumentos: almoço colonial, piquenique em vinícola, roteiros para influenciadores e reservas diretas no WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Onira Labs — Integração Estratégica de Camadas</span>
+      <span>Slide 4</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: A PARCERIA SOUL BRANDING + ONIRA -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">4. A Oportunidade Comercial Soul Branding & Onira Labs</h2>
+      <span class="slide-tag">Parceria Estratégica</span>
+    </div>
+    <div class="slide-body">
+      <div class="grid-2">
+        <div class="card">
+          <h3>O que Entregamos Agora (Imediato)</h3>
+          <ul>
+            <li><strong>Orçamento Fechado R$ 40.000,00:</strong> 8 Templates Mestres (Desk + Mobile), Design System React e Estudo de Modelagem.</li>
+            <li><strong>Segurança Absoluta:</strong> Conformidade com prestação de contas da Rouanet e sincronia técnica com o Diogo.</li>
+            <li><strong>Direção de Experiência:</strong> O design desenhado sob medida para o usuário turístico real em trânsito.</li>
+          </ul>
+        </div>
+        <div class="card highlight-card">
+          <h3>O que Podemos Construir Juntos (Médio Prazo)</h3>
+          <ul>
+            <li><strong>Parceria Soul + Onira:</strong> A Onira como o braço de produto e tecnologia digital da agência para grandes contas da Serra.</li>
+            <li><strong>Kit Habilitador para o SEGH:</strong> Levar junto à Marivânia uma proposta de padronização digital para os associados gastronômicos.</li>
+            <li><strong>Consórcio de Turismo Regional:</strong> Posicionar Caxias do Sul como um território turístico inteligente e autossustentável.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Jefferson Motta — Onira Labs | jefferson@oniralabs.com</span>
+      <span>Slide 5</span>
+    </div>
+  </div>
+
+</body>
+</html>

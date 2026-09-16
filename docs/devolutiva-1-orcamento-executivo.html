@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Devolutiva Executiva — Guia de Caxias do Sul</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a202c;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      font-size: 11.5pt;
+      line-height: 1.55;
+    }
+    .header {
+      border-bottom: 3px solid #0f172a;
+      padding-bottom: 14px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .header h1 {
+      font-size: 20pt;
+      margin: 0 0 6px 0;
+      color: #0f172a;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .header .subtitle {
+      font-size: 11pt;
+      color: #475569;
+      font-weight: 500;
+    }
+    .meta-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      font-size: 10.5pt;
+    }
+    .meta-item strong {
+      color: #0f172a;
+      display: inline-block;
+      width: 130px;
+    }
+    h2 {
+      font-size: 13.5pt;
+      color: #0f172a;
+      border-left: 4px solid #2563eb;
+      padding-left: 10px;
+      margin: 28px 0 14px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    h3 {
+      font-size: 11.5pt;
+      color: #1e293b;
+      margin: 18px 0 8px 0;
+      font-weight: 700;
+    }
+    p, li {
+      color: #334155;
+      text-align: justify;
+    }
+    ul {
+      margin: 8px 0 16px 20px;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 10pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 9px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .total-row {
+      background-color: #eff6ff !important;
+      font-weight: bold;
+      color: #1e3a8a;
+      font-size: 11pt;
+    }
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 12px 16px;
+      margin: 18px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 10.5pt;
+      color: #1e40af;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .footer {
+      margin-top: 30px;
+      padding-top: 14px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 9pt;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1>DEVOLUTIVA EXECUTIVA & PROPOSTA TÉCNICA</h1>
+      <div class="subtitle">UI/UX, Arquitetura de Experiência & Design System Dinâmico</div>
+    </div>
+    <div style="text-align: right; font-size: 10pt; color: #64748b;">
+      Setembro / 2026<br>
+      <strong>Onira Labs</strong>
+    </div>
+  </div>
+
+  <div class="meta-box">
+    <div class="meta-item"><strong>Projeto:</strong> Patrimônios, Marcos e Lendas — Guia de Caxias do Sul</div>
+    <div class="meta-item"><strong>Solicitante:</strong> Soul Branding (A/C Mateus Loreto)</div>
+    <div class="meta-item"><strong>Direção Técnica:</strong> Jefferson Motta — Especialista em Produto Digital & UX</div>
+    <div class="meta-item"><strong>Cliente Final:</strong> Guia de Caxias do Sul (Fomento Cultural)</div>
+  </div>
+
+  <div class="callout">
+    <strong>Régua de Ouro Adotada:</strong> "O que estende padrão, entra. O que vira refação, fica fora." O escopo foi concebido sob a perspectiva de <strong>Design de Experiência e Arquitetura de Sistema</strong>, entregando fôrmas reutilizáveis prontas para a migração em React (TI/Diogo).
+  </div>
+
+  <h2>1. Sequência Racional de Execução (Templates antes de Tokens)</h2>
+  <p>
+    Em um projeto desta escala e heterogeneidade visual, criar a biblioteca de componentes no vácuo gera retrabalho e engessamento. A cadência de produção adotará a ordem metodológica correta:
+  </p>
+  <ul>
+    <li><strong>Etapa 1 — Diagnóstico UX/IA & Direção de Arte:</strong> Auditoria do acervo existente, benchmark e definição da hierarquia de navegação.</li>
+    <li><strong>Etapa 2 — Desenho dos 8 Templates Mestres (Desktop & Mobile):</strong> Prototipação dos fluxos reais de uso (comércio, turismo rural, roteirização cultural e monumento histórico). É o template que valida quais componentes são realmente necessários na prática.</li>
+    <li><strong>Etapa 3 — Consolidação do Design System & Tokens para React:</strong> Extração e componentização formal (tipografia, cores semânticas, acessibilidade WCAG 2.1 AA, estados e documentação Dev Mode para a engenharia de front-end).</li>
+  </ul>
+
+  <h2>2. Escopo Integrado & Inclusão das Variáveis Críticas</h2>
+  <p>
+    Para blindar o projeto contra aditivos futuros e garantir uma experiência de ponta a ponta, o escopo base já incorpora como <strong>itens nativos</strong>:
+  </p>
+  <ul>
+    <li><strong>8º Template Dedicado:</strong> Separação formal entre a ficha comercial/serviços e o template aprofundado de <em>Patrimônio Cultural & Monumento Histórico</em> (essencial para a prestação de contas do fomento).</li>
+    <li><strong>Mapa Interativo com Camadas de Roteirização:</strong> Interface cartográfica completa contemplando visualização de pins por categoria, card lateral de prévia e estrutura para rotas guiadas sequenciais.</li>
+    <li><strong>Adaptação Mobile-First Completa:</strong> Pranchas dedicadas em viewport 390px com alvos de toque mínimos de 44px e navegação inferior ergonômica.</li>
+    <li><strong>Diretrizes de Acessibilidade WCAG 2.1 Nível AA:</strong> Contraste superior a 4.5:1 e semântica auditada para segurança jurídica.</li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <h2>3. Investimento, Prazos Reais & Condições Comerciais</h2>
+  <p>
+    Considerando o volume e a responsabilidade de direção executiva de design (com acompanhamento de handoff para a TI), os prazos foram redimensionados para uma margem de segurança operacional sustentável:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">Módulo</th>
+        <th style="width: 45%;">Descrição do Entregável</th>
+        <th style="width: 20%;">Prazo Real</th>
+        <th style="width: 20%;">Investimento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Fase 1</strong></td>
+        <td><strong>Diagnóstico UX/IA & Arquitetura da Informação</strong><br>Auditoria crítica de usabilidade, benchmark e estruturação de fluxos.</td>
+        <td>10 a 12 dias úteis</td>
+        <td>R$ 6.500,00</td>
+      </tr>
+      <tr>
+        <td><strong>Fase 2</strong></td>
+        <td><strong>8 Templates Mestres (Desktop & Mobile-First)</strong><br>Home, Categorias, Detalhe Comercial, Distritos (12), Hub Rouanet, Mapa Roteirizado, Notícias e Detalhe Histórico Rouanet.</td>
+        <td>20 a 24 dias úteis</td>
+        <td>R$ 18.500,00</td>
+      </tr>
+      <tr>
+        <td><strong>Fase 3</strong></td>
+        <td><strong>Design System & Tokens para React (Diogo)</strong><br>Biblioteca componentizada no Figma, matriz de estados completa, conformidade WCAG 2.1 AA e alinhamento com a engenharia.</td>
+        <td>12 a 15 dias úteis</td>
+        <td>R$ 9.500,00</td>
+      </tr>
+      <tr>
+        <td><strong>Fase 4</strong></td>
+        <td><strong>Estudo Estratégico de Modelagem & Ativação Regional</strong><br>Racional de ativação comercial para a Serra Gaúcha (modelo Vale dos Vinhedos), parâmetros de encontrabilidade e integração com o trade.</td>
+        <td>8 a 10 dias úteis</td>
+        <td>R$ 5.500,00</td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="2"><strong>INVESTIMENTO TOTAL DO PROJETO INTEGRADO</strong></td>
+        <td><strong>~45 a 50 dias úteis</strong></td>
+        <td><strong>R$ 40.000,00</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Condição de Pagamento Sugerida:</strong> Entrada de 35% na formalização, 35% na validação intermediária dos Templates Mestres e 30% na entrega final da biblioteca e documentação de handoff no Figma.
+  </div>
+
+  <h2>4. Governança e Delimitação de Responsabilidades</h2>
+  <ul>
+    <li><strong>Incluso:</strong> Arquitetura de informação, direção de arte, design de telas em alta fidelidade no Figma, prototipagem navegável para teste de fluxo, Design Tokens estruturados para Front-end e 2 rodadas de homologação por fase.</li>
+    <li><strong>Fora de Escopo:</strong> Codificação e implementação em código React (a cargo da equipe de TI do cliente), redação dos textos de pesquisa histórica e produção fotográfica in loco.</li>
+  </ul>
+
+  <div class="footer">
+    <div>Onira Labs — Inteligência de Produto & Experiência Digital</div>
+    <div>Contato: Jefferson Motta | Documento Executivo Presencial</div>
+  </div>
+
+</body>
+</html>
