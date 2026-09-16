@@ -1,49 +1,60 @@
-# 🎯 Mapeamento de Fit de Produtos Onira — Estabelecimentos Guia de Caxias do Sul
+# 🎯 Mapeamento de Fit Estratégico de Produtos Onira — Guia de Caxias do Sul
 **Data da Estruturação:** Setembro / 2026 | **Responsável:** Jefferson Motta — Onira Labs  
 **Universo Analisado:** 208 Estabelecimentos (150 Rurais + 58 Urbanos)  
 
 ---
 
-## 🧭 1. Visão Geral da Matriz de Produtos Onira
+## 🧭 1. A Tese Comercial: Fit Real vs. Ilusão de Demanda
 
-| Produto Onira | Público-Alvo / Nicho | Proposta de Valor Central | Modelo de Monetização |
-|---|---|---|---|
-| **🍔 Onira.fly** | Gastronomia Rural, Cantinas, Cafés Coloniais, Bares e Restaurantes Urbanos | Canal próprio de alta conversão com cardápio visual ultra-rápido, SEO semântico e pedido direto no WhatsApp. | Setup + Mensalidade ou % de performance |
-| **🍷 Onira Vouchers & Split Pix** | Vinícolas, Enoturismo, Queijarias e Experiências Rurais | Venda antecipada de ingressos, degustações e almoços coloniais com Split Pix direto (90% produtor / 10% Guia). | 10% de taxa sobre o ticket emitido |
-| **🏨 Onira Direct / Stay** | Pousadas Rurais, Chalés, Hotéis Boutique e Campings | Canal direto de reservas sem as taxas predatórias de 15% a 25% da Booking.com e Airbnb. | Setup + Assinatura de motor de reservas |
-| **📦 Onira Pro (B2B)** | Agroindústrias Coloniais, Frigoríficos, Queijarias e Produtores Atacadistas | Catálogo digital B2B com tabela de preços PJ, pedido mínimo e faturamento a prazo. | Licença de software B2B |
+> 🔴 **O Diagnóstico Estratégico:**  
+> O **Onira.fly** tem seu apelo máximo na **eliminação do pedágio de 27% do iFood** e na automação de pedidos de **alta frequência (delivery e balcão urbano)**.  
+> Oferecer Onira.fly para uma cantina isolada em estrada de terra (que abre apenas aos domingos para almoço de turistas) é um erro de posicionamento: ela **não tem demanda de delivery** para compensar os 27%.  
+> Para a gastronomia e enoturismo rural, o produto com fit perfeito é o **Onira Vouchers (Split Pix)**, vendendo antecipadamente o almoço colonial e a degustação.
 
 ---
 
-## 📊 2. Distribuição de Fit no Ecossistema Mapeado
+## 📊 2. Distribuição Realista de Fit no Ecossistema
 
 ```
-┌──────────────────────────────────────────────┬───────────────┬─────────────────┐
-│ PRODUTO ONIRA                                │ ESTABELECIMENTOS │ % DO ECOSSISTEMA │
-├──────────────────────────────────────────────┼───────────────┼─────────────────┤
-│ 🍔 Onira.fly (Gastronomia & Cantinas)        │ 118           │ 56.7%           │
-│ 🍷 Onira Vouchers (Enoturismo & Degustação)  │ 42            │ 20.2%           │
-│ 📦 Onira Pro (Agroindústria & Catálogo B2B)  │ 31            │ 14.9%           │
-│ 🏨 Onira Direct (Pousadas & Hospedagem)      │ 17            │ 8.2%            │
-│ TOTAL                                        │ 208           │ 100.0%          │
-└──────────────────────────────────────────────┴───────────────┴─────────────────┘
+┌────────────────────────────────────────────────────────┬───────────────┬─────────────────┐
+│ PRODUTO ONIRA                                          │ ESTABELECIMENTOS │ % DO ECOSSISTEMA │
+├────────────────────────────────────────────────────────┼───────────────┼─────────────────┤
+│ 🍷 Onira Vouchers (Almoço Colonial & Enoturismo Rural) │ 73            │ 35.1%           │
+│ 🍔 Onira.fly (Gastronomia Urbana / Delivery / Noite)   │ 58            │ 27.9%           │
+│ 📦 Onira Pro (Agroindústria & Catálogo B2B Atacado)    │ 76            │ 36.5%           │
+│ 🏨 Onira Direct (Pousadas Rurais & Hospedagem)         │ 1             │ 0.5%           │
+│ TOTAL                                                  │ 208           │ 100.0%          │
+└────────────────────────────────────────────────────────┴───────────────┴─────────────────┘
 ```
 
 ---
 
-## 🎯 3. Amostra de Estabelecimentos Críticos com Fit Imediato
+## 🎯 3. Os 4 Perfis de Clientes e Racionais de Venda
 
-| Estabelecimento | Distrito / Bairro | Nota Google ⭐ | Reviews 💬 | Status Web | Produto Onira | Racional & Por Quê |
-|---|---|:---:|:---:|---|---|---|
-| **Café Colonial Giardino & Famiglia Pezzi** | Vila Cristina | 4.8 ⭐ | 620 | 🔴 Sem Site | **Onira.fly** | Alto fluxo de turistas na BR-116; 100% dependente do WhatsApp; precisa de cardápio e rota clara. |
-| **Cantina Tonet Vinícola** | Linha 40 | 4.7 ⭐ | 1.150 | ⚠️ Site 404 | **Onira Vouchers** | Site antigo caiu; vende almoço colonial e degustação; voucher antecipado resolve no-show. |
-| **Pavos Brassaria & Garden** | Forqueta | 4.8 ⭐ | 340 | 🔴 Sem Site | **Onira.fly** | Cervejaria rural de sucesso sem presença web; cardápio de chopes e petiscos no WhatsApp. |
-| **Queijaria Bolson & Camêlo** | Criúva | 4.9 ⭐ | 180 | ⚠️ Site 404 | **Onira Pro / Vouchers** | Queijos premiados; site caiu; precisa de canal B2B para empórios e vouchers de visitação. |
-| **Massas & Biscoitos São Braz** | Fazenda Souza | 4.7 ⭐ | 210 | 🔴 Sem Site | **Onira Pro** | Agroindústria familiar vendendo em atacado; necessita de catálogo digital para revendedores. |
-| **Casa Motter** | Ana Rech | 4.6 ⭐ | 290 | ⚠️ Site 404 | **Onira Vouchers** | Vinícola tradicional com site quebrado; degustações com split automático no Guia. |
-| **Alligator Steakhouse** | Área Urbana | 4.6 ⭐ | 890 | 🔴 Sem Site | **Onira.fly** | Hamburgueria/steakhouse urbana dependente de reservas; cardápio interativo e delivery próprio. |
-| **Pousadas dos Cânions** | Criúva | 4.9 ⭐ | 320 | 🔴 Sem Site | **Onira Direct** | Alta dependência do Airbnb/Booking; canal direto com voucher retém margem na pousada. |
+### 🍔 1. Onira.fly — Alta Demanda / Delivery / Bares & Restaurantes Urbanos (58 estabelecimentos)
+* **Perfil:** Restaurantes urbanos, pizzarias, hamburguerias, cervejarias com garden e comida especializada com volume constante de pedidos.
+* **A Dor Real:** Pagam comissão de até 27% no iFood, usam links do Goomer/Anota AI com atrito ou perdem clientes no WhatsApp desorganizado.
+* **O Argumento Onira.fly:** *"Recupere os 27% da taxa de entrega e construa sua própria base de clientes fiéis com cardápio visual ultra-rápido e Pix direto."*
+* **Casos Âncora:** *BaitaKão, Sebastiana, Soulshi, Alligator Steakhouse, Becco Pizza, Fit Life, Pavos Brassaria.*
+
+### 🍷 2. Onira Vouchers & Split Pix — Gastronomia Rural de Destino & Vinícolas (73 estabelecimentos)
+* **Perfil:** Cantinas típicas, cafés coloniais de estrada e vinícolas em distritos rurais (Linha 40, Forqueta, Criúva, Vila Cristina). Não operam entrega.
+* **A Dor Real:** Não saber quantas pessoas virão no domingo; turistas que ligam de última hora ou desistem (no-show); falta de pagamento antecipado.
+* **O Argumento Onira Vouchers:** *"Venda o almoço colonial ou a degustação com pagamento antecipado via Pix direto no Guia de Caxias. O turista já sai de Porto Alegre com a mesa paga."*
+* **Casos Âncora:** *Cantina Milani, Café Colonial Giardino, Casa Fagundes, Cantina Tonet, Casa Motter, Granja do Vale Zanrosso.*
+
+### 📦 3. Onira Pro — Agroindústria & Distribuição B2B (76 estabelecimentos)
+* **Perfil:** Produtores de queijos coloniais, massas artesanais, biscoitos, conservas e sucos de uva.
+* **A Dor Real:** Venda em atacado desorganizada via WhatsApp; falta de tabela de preços PJ e pedidos recorrentes para restaurantes e empórios.
+* **O Argumento Onira Pro:** *"Profissionalize suas vendas para empresas com catálogo digital B2B, tabela de atacado e pedido mínimo automatizado."*
+* **Casos Âncora:** *Queijaria Bolson & Camêlo, Massas São Braz, Agro Qualitá, Granberg Alimentos, Hidrofert.*
+
+### 🏨 4. Onira Direct — Hospedagem & Pousadas Rurais (1 estabelecimentos)
+* **Perfil:** Pousadas de charme, cabanas e campings dos distritos de Criúva, Galópolis e Santa Lúcia.
+* **A Dor Real:** Taxas predatórias de 15% a 25% da Booking.com e Airbnb.
+* **O Argumento Onira Direct:** *"Canal de reservas diretas sem comissão de intermediários, oferecendo cortesia na chegada para fidelizar o hóspede."*
+* **Casos Âncora:** *Pousadas dos Cânions, Pousadas de Ana Rech, Chalés de Criúva.*
 
 ---
 
-> 📁 **Acesse a tabela interativa completa com busca e filtros em:** [`index.html`](file:///c:/Users/ADM/onira-labs/clientes/guia-caxias-soul/index.html) (Aba *🎯 Fit Produtos Onira*).
+> 📁 **Tabela Interativa Online:** Acesse com filtros e busca em: [`https://jeffcsmotta.github.io/guia-caxias-soul/`](https://jeffcsmotta.github.io/guia-caxias-soul/) (Aba *🎯 Fit Produtos Onira*).
