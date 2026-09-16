@@ -8,19 +8,15 @@
 
 ---
 
-> 📌 **Visão Geral do Projeto:**  
-> Modernização da apresentação visual da nova área cultural (Lei Rouanet) do Guia de Caxias do Sul através de um **Design System com Tokens para React** e **8 Templates Mestres Replicáveis**, transformando o acervo histórico na infraestrutura de ativação econômica de toda a Serra Gaúcha.
-
----
-
 ## 🧭 Índice do Workspace
 
 1. [🔍 1. Auditoria Cara-Crachá (Briefing Soul vs. Solução Onira)](#1-auditoria-cara-crachá-briefing-soul-vs-solução-onira)
-2. [📊 2. Base de Inteligência & Diagnóstico Territorial](#2-base-de-inteligência--diagnóstico-territorial)
-3. [💰 3. Devolutiva Orçamentária por Blocos (A, B, C, D)](#3-devolutiva-orçamentária-por-blocos-a-b-c-d)
-4. [🗺️ 4. Análise de Modelos de Negócio & Split Pix](#4-análise-de-modelos-de-negócio--split-pix)
-5. [🛡️ 5. Plano de Sustentação & Pitch Soul Branding](#5-plano-de-sustentação--pitch-soul-branding)
-6. [📐 6. Matriz de 8 Templates Mestres & Handoff React](#6-matriz-de-8-templates-mestres--handoff-react)
+2. [🎯 2. Mapeamento de Fit — Produtos Onira Labs (208 Alvos)](#2-mapeamento-de-fit--produtos-onira-labs-208-alvos)
+3. [📊 3. Base de Inteligência & Diagnóstico Territorial](#3-base-de-inteligência--diagnóstico-territorial)
+4. [💰 4. Devolutiva Orçamentária por Blocos (A, B, C, D)](#4-devolutiva-orçamentária-por-blocos-a-b-c-d)
+5. [🗺️ 5. Análise de Modelos de Negócio & Split Pix](#5-análise-de-modelos-de-negócio--split-pix)
+6. [🛡️ 6. Plano de Sustentação & Pitch Soul Branding](#6-plano-de-sustentação--pitch-soul-branding)
+7. [📐 7. Matriz de 8 Templates Mestres & Handoff React](#7-matriz-de-8-templates-mestres--handoff-react)
 
 ---
 
@@ -43,7 +39,31 @@
 
 ---
 
-## 📊 2. Base de Inteligência & Diagnóstico Territorial
+## 🎯 2. Mapeamento de Fit — Produtos Onira Labs (208 Alvos)
+
+Classificamos 100% da base em 4 produtos do ecossistema Onira com base em modelo operacional, presença web e reputação no Google (Nota ⭐ e Reviews 💬):
+
+```
+┌──────────────────────────────────────────────┬───────────────┬─────────────────┐
+│ PRODUTO ONIRA                                │ ESTABELECIMENTOS │ % DO ECOSSISTEMA │
+├──────────────────────────────────────────────┼───────────────┼─────────────────┤
+│ 🍔 Onira.fly (Gastronomia & Cantinas)        │ 118           │ 56.7%           │
+│ 🍷 Onira Vouchers (Enoturismo & Degustação)  │ 42            │ 20.2%           │
+│ 📦 Onira Pro (Agroindústria & Catálogo B2B)  │ 31            │ 14.9%           │
+│ 🏨 Onira Direct (Pousadas & Hospedagem)      │ 17            │ 8.2%            │
+│ TOTAL                                        │ 208           │ 100.0%          │
+└──────────────────────────────────────────────┴───────────────┴─────────────────┘
+```
+
+### Racional de Fit dos 4 Produtos:
+1. **🍔 Onira.fly (56,7%):** Cantinas rurais e restaurantes urbanos. Sem site próprio, dependentes de redes sociais. O cardápio visual ultra-rápido com pedido no WhatsApp e SEO semântico coloca a operação no topo do Google Maps e buscas por IA.
+2. **🍷 Onira Vouchers (20,2%):** Vinícolas e enoturismo. Venda antecipada de degustações e almoços coloniais (R$ 80 a R$ 180) com **Split Pix direto (90% produtor / 10% Guia)**, eliminando no-show e garantindo receita prévia.
+3. **📦 Onira Pro (14,9%):** Agroindústrias, queijarias e produtores rurais. Catálogo corporativo B2B com tabela diferenciada de atacado, pedido mínimo e faturamento PJ para empórios e restaurantes.
+4. **🏨 Onira Direct (8,2%):** Pousadas rurais e chalés dos distritos (Criúva, Ana Rech). Motor de reserva direto eliminando comissões de 15% a 25% da Booking/Airbnb.
+
+---
+
+## 📊 3. Base de Inteligência & Diagnóstico Territorial
 
 ### O Apagão Digital do Interior de Caxias do Sul (Auditoria 100% dos 150 Rurais):
 * **86,7% (130 de 150)** NÃO POSSUEM canal próprio funcional no interior.
@@ -52,12 +72,13 @@
 * **Apenas 19 empresas (12,7%)** possuem site ativo respondendo HTTP 200.
 
 > 📁 **Arquivos da Base Completa:**
-> - CSV Consolidado (208 empresas com GMB, Insta e Localidade): [`database-completa-guia-caxias.csv`](file:///c:/Users/ADM/onira-labs/clientes/guia-caxias-soul/planilhas/database-completa-guia-caxias.csv)
+> - CSV Consolidado (208 empresas com Notas Google, Reviews, Fit Onira e Localidade): [`database-completa-guia-caxias.csv`](file:///c:/Users/ADM/onira-labs/clientes/guia-caxias-soul/planilhas/database-completa-guia-caxias.csv)
 > - JSON Estruturado para Engenharia: [`database-completa-guia-caxias.json`](file:///c:/Users/ADM/onira-labs/clientes/guia-caxias-soul/planilhas/database-completa-guia-caxias.json)
+> - Dossiê de Fit Onira em Markdown: [`fit-produtos-onira.md`](file:///c:/Users/ADM/onira-labs/clientes/guia-caxias-soul/planilhas/fit-produtos-onira.md)
 
 ---
 
-## 💰 3. Devolutiva Orçamentária por Blocos (A, B, C, D)
+## 💰 4. Devolutiva Orçamentária por Blocos (A, B, C, D)
 
 ### Estrutura Modular dos Blocos:
 
@@ -81,7 +102,7 @@
 
 ---
 
-## 🗺️ 4. Análise de Modelos de Negócio & Split Pix
+## 🗺️ 5. Análise de Modelos de Negócio & Split Pix
 
 * **A Desconstrução do "Tiro no Pé" do WhatsApp:** Troca da contagem fria de cliques (CPC) pelo **WhatsApp Contextualizado com Benefício** (ex: *"Vi no Guia e gostaria de resgatar a sobremesa cortesia"*). O dono do restaurante sente o cliente entrando na loja.
 * **Monetização de Experiências (Split Pix 10% / 90%):** Vouchers de degustação e almoço colonial com split direto no gateway (R$ 108 para vinícola / R$ 12 para o Guia) sem bitributação.
@@ -89,7 +110,7 @@
 
 ---
 
-## 🛡️ 5. Plano de Sustentação & Pitch Soul Branding
+## 🛡️ 6. Plano de Sustentação & Pitch Soul Branding
 
 * **Ato 1 (Dever de Casa):** Apresentar a conformidade estrita da Rouanet (WCAG AA), a ponte limpa com o Diogo (Tokens) e a modularidade de templates.
 * **Ato 2 (O Gancho de Futuro):** A Onira Labs como braço de tecnologia e IA da Soul Branding para ativar o interior de Caxias do Sul.
@@ -97,7 +118,7 @@
 
 ---
 
-## 📐 6. Matriz de 8 Templates Mestres & Handoff React
+## 📐 7. Matriz de 8 Templates Mestres & Handoff React
 
 1. `TPL_01_HOME`: Portal de entrada, vitrines, atalhos urbana/rural e chamada Rouanet.
 2. `TPL_02_SUBCATEGORIAS`: Listagem dinâmica com filtros facetados (bairro, preço, ordenação).
