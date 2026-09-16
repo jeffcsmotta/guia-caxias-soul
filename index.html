@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Notion Project Hub & Dossiê Executivo — Guia de Caxias do Sul · Onira Labs</title>
   <meta name="description" content="Workspace consolidado de inteligência, base de dados de estabelecimentos, fit de produtos Onira, auditoria cara-crachá e proposta comercial." />
 
@@ -62,6 +62,7 @@
       overflow-x: hidden;
       display: flex;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* ─── Notion App Layout ─── */
@@ -73,7 +74,7 @@
 
     /* ─── Notion Sidebar ─── */
     .sidebar {
-      width: 300px;
+      width: 290px;
       background: var(--sidebar-bg);
       border-right: 1px solid var(--border);
       display: flex;
@@ -179,6 +180,45 @@
       color: var(--primary);
     }
 
+    /* ─── Mobile Sticky Pills Bar ─── */
+    .mobile-nav-bar {
+      display: none;
+      background: #0b0e14;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 14px;
+      overflow-x: auto;
+      white-space: nowrap;
+      position: sticky;
+      top: 56px;
+      z-index: 35;
+      gap: 8px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .mobile-nav-bar::-webkit-scrollbar { display: none; }
+
+    .mobile-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .mobile-nav-pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
     /* ─── Main Content Area ─── */
     .main-viewport {
       flex: 1;
@@ -190,13 +230,13 @@
 
     .topbar {
       height: 56px;
-      background: rgba(14, 17, 23, 0.85);
+      background: rgba(14, 17, 23, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 28px;
+      padding: 0 24px;
       position: sticky;
       top: 0;
       z-index: 40;
@@ -205,9 +245,12 @@
     .breadcrumbs {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       font-size: 12px;
       color: var(--text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .breadcrumbs a {
@@ -223,15 +266,16 @@
     .topbar-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      flex-shrink: 0;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 12px;
-      font-size: 12px;
+      padding: 6px 11px;
+      font-size: 11.5px;
       font-weight: 600;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border);
@@ -261,59 +305,59 @@
       max-width: 1140px;
       width: 100%;
       margin: 0 auto;
-      padding: 40px 32px 100px;
+      padding: 32px 28px 100px;
     }
 
     /* ─── Notion Page Header ─── */
     .page-icon {
-      font-size: 42px;
-      margin-bottom: 16px;
+      font-size: 38px;
+      margin-bottom: 12px;
       display: inline-block;
     }
 
     .page-title {
       font-family: var(--font-serif);
-      font-size: 34px;
+      font-size: 30px;
       font-weight: 700;
       letter-spacing: -0.5px;
       color: #fff;
       line-height: 1.25;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .page-subtitle {
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .page-properties {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      padding: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      padding: 14px;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
 
     .property-item {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
     }
 
     .property-label {
-      font-size: 11px;
+      font-size: 10.5px;
       text-transform: uppercase;
       font-weight: 700;
       color: var(--text-dim);
     }
 
     .property-value {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 600;
       color: var(--text);
     }
@@ -321,14 +365,14 @@
     /* ─── Notion Callouts & Boxes ─── */
     .notion-callout {
       display: flex;
-      gap: 14px;
-      padding: 16px 18px;
+      gap: 12px;
+      padding: 14px 16px;
       border-radius: var(--radius-md);
       background: var(--card-bg);
       border: 1px solid var(--border);
-      margin: 20px 0;
-      line-height: 1.6;
-      font-size: 14px;
+      margin: 18px 0;
+      line-height: 1.55;
+      font-size: 13.5px;
     }
 
     .notion-callout.alert {
@@ -357,7 +401,7 @@
     }
 
     .notion-callout .icon {
-      font-size: 20px;
+      font-size: 18px;
       flex-shrink: 0;
     }
 
@@ -378,43 +422,43 @@
 
     /* ─── Markdown Content Typography ─── */
     .markdown-body h2 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: #fff;
-      margin: 36px 0 16px;
-      padding-bottom: 8px;
+      margin: 32px 0 14px;
+      padding-bottom: 6px;
       border-bottom: 1px solid var(--border);
     }
 
     .markdown-body h3 {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text);
-      margin: 24px 0 10px;
+      margin: 22px 0 8px;
     }
 
     .markdown-body p {
-      margin-bottom: 16px;
-      font-size: 14.5px;
+      margin-bottom: 14px;
+      font-size: 14px;
       color: #cbd5e1;
     }
 
     .markdown-body ul, .markdown-body ol {
-      margin: 0 0 18px 22px;
-      font-size: 14.5px;
+      margin: 0 0 16px 20px;
+      font-size: 14px;
       color: #cbd5e1;
     }
 
     .markdown-body li {
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .markdown-body code {
       font-family: var(--font-mono);
       background: rgba(255,255,255,0.08);
-      padding: 2px 6px;
+      padding: 2px 5px;
       border-radius: 4px;
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--gold-light);
     }
 
@@ -422,11 +466,11 @@
       background: #0b0d13;
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 18px;
+      padding: 16px;
       overflow-x: auto;
-      margin: 18px 0;
+      margin: 16px 0;
       font-family: var(--font-mono);
-      font-size: 13px;
+      font-size: 12.5px;
       line-height: 1.5;
       color: #93c5fd;
     }
@@ -435,12 +479,12 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 13px;
+      margin: 16px 0;
+      font-size: 12.5px;
     }
 
     th, td {
-      padding: 11px 13px;
+      padding: 10px 12px;
       border: 1px solid var(--border);
       text-align: left;
     }
@@ -450,7 +494,7 @@
       color: var(--text-muted);
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 11px;
+      font-size: 10.5px;
       letter-spacing: 0.5px;
     }
 
@@ -466,23 +510,23 @@
     .db-controls {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 18px;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 14px;
+      padding: 12px;
     }
 
     .search-input {
       flex: 1;
-      min-width: 240px;
+      min-width: 200px;
       background: #0a0c12;
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 8px 14px;
+      padding: 7px 12px;
       border-radius: var(--radius-sm);
-      font-size: 13px;
+      font-size: 12.5px;
       font-family: var(--font-sans);
     }
 
@@ -495,20 +539,21 @@
       background: #0a0c12;
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 8px 12px;
+      padding: 7px 10px;
       border-radius: var(--radius-sm);
-      font-size: 13px;
+      font-size: 12px;
       font-family: var(--font-sans);
     }
 
     .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 3px 8px;
+      gap: 3px;
+      padding: 2px 7px;
       border-radius: 12px;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .status-badge.ativo { background: var(--green-dim); color: var(--green); border: 1px solid rgba(16,185,129,0.3); }
@@ -519,11 +564,12 @@
     .product-badge {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 11px;
+      gap: 3px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 10.5px;
       font-weight: 700;
+      white-space: nowrap;
     }
     .product-badge.fly { background: var(--wine-dim); color: #fb7185; border: 1px solid rgba(225,29,72,0.3); }
     .product-badge.vouchers { background: var(--purple-dim); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
@@ -535,11 +581,13 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       background: var(--card-bg);
-      max-height: 650px;
+      max-height: 620px;
+      -webkit-overflow-scrolling: touch;
     }
 
     .db-table-wrapper table {
       margin: 0;
+      min-width: 650px;
     }
 
     .db-table-wrapper th {
@@ -552,14 +600,15 @@
     .pill-link {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 3px 7px;
-      font-size: 11px;
+      gap: 3px;
+      padding: 2px 6px;
+      font-size: 10.5px;
       border-radius: var(--radius-sm);
       background: rgba(255,255,255,0.06);
       color: var(--text-muted);
       text-decoration: none;
       transition: all 0.15s;
+      white-space: nowrap;
     }
 
     .pill-link:hover {
@@ -570,36 +619,36 @@
     /* ─── Metric Cards Grid ─── */
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 14px;
-      margin-bottom: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
     .metric-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 16px;
+      padding: 14px;
     }
 
     .metric-card .label {
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--text-muted);
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .metric-card .value {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
       color: #fff;
       font-family: var(--font-sans);
     }
 
     .metric-card .desc {
-      font-size: 11px;
+      font-size: 10.5px;
       color: var(--text-dim);
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     .metric-card.critical .value { color: #f87171; }
@@ -607,11 +656,20 @@
     .metric-card.green .value { color: var(--green); }
     .metric-card.purple .value { color: #c084fc; }
 
-    /* Responsive */
+    /* ─── Mobile Responsiveness ─── */
     @media (max-width: 900px) {
       .sidebar { display: none; }
-      .topbar { padding: 0 16px; }
-      .content-container { padding: 20px 16px 80px; }
+      .mobile-nav-bar { display: flex; }
+      .topbar { padding: 0 14px; height: 50px; }
+      .mobile-nav-bar { top: 50px; }
+      .content-container { padding: 18px 14px 80px; }
+      .page-title { font-size: 24px; }
+      .page-subtitle { font-size: 13px; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .metric-card { padding: 10px; }
+      .metric-card .value { font-size: 18px; }
+      .topbar-actions .btn:not(.btn-primary) { display: none; }
+      .notion-callout { font-size: 12.5px; padding: 12px; }
     }
   </style>
 </head>
@@ -619,7 +677,7 @@
 
   <div class="app-container">
     
-    <!-- Sidebar -->
+    <!-- Sidebar Desktop -->
     <aside class="sidebar">
       <div class="workspace-header">
         <div class="workspace-avatar">🏛️</div>
@@ -638,7 +696,7 @@
       <a class="nav-item" onclick="switchTab('tab-fit')">
         <span class="icon">🎯</span>
         <span>Fit Produtos Onira</span>
-        <span class="badge" style="background: rgba(225,29,72,0.2); color: #fb7185;">208 Alvos</span>
+        <span class="badge" style="background: rgba(225,29,72,0.2); color: #fb7185;">208</span>
       </a>
       <a class="nav-item" onclick="switchTab('tab-database')">
         <span class="icon">📊</span>
@@ -669,7 +727,7 @@
         <span>Briefing Original Soul</span>
       </a>
 
-      <div style="margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border);">
+      <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border);">
         <div style="font-size: 11px; color: var(--text-dim); text-align: center;">
           Jefferson Motta · Onira Labs<br>Setembro / 2026
         </div>
@@ -682,18 +740,28 @@
       <!-- Topbar -->
       <header class="topbar">
         <div class="breadcrumbs">
-          <a href="#">Projetos</a>
-          <span>/</span>
-          <a href="#">Soul Branding</a>
+          <a href="#">Onira</a>
           <span>/</span>
           <span class="current" id="breadcrumb-title">Auditoria Cara-Crachá</span>
         </div>
         <div class="topbar-actions">
-          <button class="btn" onclick="copyCurrentMarkdown()">📋 Copiar Markdown Notion</button>
+          <button class="btn" onclick="copyCurrentMarkdown()">📋 Copiar Notion</button>
           <a class="btn" href="Devolutiva-1-Orcamento-Guia-Caxias.pdf" target="_blank">📄 Orçamento PDF</a>
           <a class="btn btn-primary" href="Apresentacao-Executiva-Hub-Caxias.pdf" target="_blank">📽️ Slides PDF</a>
         </div>
       </header>
+
+      <!-- Mobile Horizontal Scroll Pills Bar -->
+      <div class="mobile-nav-bar">
+        <div class="mobile-nav-pill active" onclick="switchTab('tab-caracracha')">🔍 Cara-Crachá</div>
+        <div class="mobile-nav-pill" onclick="switchTab('tab-fit')">🎯 Fit Onira (208)</div>
+        <div class="mobile-nav-pill" onclick="switchTab('tab-database')">📊 Base Geral</div>
+        <div class="mobile-nav-pill" onclick="switchTab('tab-orcamento')">💰 Orçamento</div>
+        <div class="mobile-nav-pill" onclick="switchTab('tab-negocios')">🗺️ Modelagem</div>
+        <div class="mobile-nav-pill" onclick="switchTab('tab-sustentacao')">🛡️ Pitch Soul</div>
+        <div class="mobile-nav-pill" onclick="switchTab('tab-templates')">📐 8 Templates</div>
+        <div class="mobile-nav-pill" onclick="switchTab('tab-briefing')">📜 Briefing</div>
+      </div>
 
       <div class="content-container">
 
@@ -734,42 +802,44 @@
 
           <div class="markdown-body">
             <h2>1. Mapeamento Cara-Crachá dos Itens 1 a 5</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th style="width: 35%;">Demanda Original Soul Branding</th>
-                  <th style="width: 50%;">Resposta Técnica & Comercial Onira Labs</th>
-                  <th style="width: 15%;">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Item 1: Contexto Rouanet & React</strong><br><small>Nova área cultural + migração do front-end para React pelo Diogo.</small></td>
-                  <td>Desenho de biblioteca de componentes e Design Tokens (grid 8pt, cores, tipografia, estados) pronta para consumo no Figma Dev Mode.</td>
-                  <td><span class="status-badge ativo">✅ Atendido</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Item 2: Estrutura Atual (Home, Distritos, Urbana, Rural)</strong><br><small>561 empresas mapeadas em 12 distritos.</small></td>
-                  <td>Mapeamento exato de cada nível hierárquico para 7 Templates Mestres dinâmicos, preservando 100% do banco de dados e do CMS existente.</td>
-                  <td><span class="status-badge ativo">✅ Atendido</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Item 3: Escopo por Blocos (A, B, C, D)</strong><br><small>Estudo + Sistema + 7 Layouts + Mobile 390px.</small></td>
-                  <td>Orçamento modular por blocos independentes (A: R$ 4,2k, B: R$ 6,8k, C: R$ 8,9k, D: R$ 4,5k) ou Pacote Integrado com desconto (R$ 22,8k).</td>
-                  <td><span class="status-badge ativo">✅ Atendido</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Item 4: Delimitação Estrita (Fora de Escopo)</strong><br><small>Sem código, sem redação, sem fotos, sem CMS.</small></td>
-                  <td>Total concordância: código front-end é do Diogo; APIs cartográficas são de engenharia; textos são da curadoria Rouanet.</td>
-                  <td><span class="status-badge ativo">✅ Atendido</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Item 5: Formato de Recebimento do Orçamento</strong><br><small>Prazos, valores unitários extras, 2 rodadas de revisão.</small></td>
-                  <td>Layout extra: R$ 1.600 | Rodada excedente: R$ 1.100 ou R$ 180/h | Prazo base: 25 a 28 dias úteis | Entrega no Figma Dev Mode.</td>
-                  <td><span class="status-badge ativo">✅ Atendido</span></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="db-table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 35%;">Demanda Original Soul Branding</th>
+                    <th style="width: 50%;">Resposta Técnica & Comercial Onira Labs</th>
+                    <th style="width: 15%;">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Item 1: Contexto Rouanet & React</strong><br><small>Nova área cultural + migração do front-end para React pelo Diogo.</small></td>
+                    <td>Desenho de biblioteca de componentes e Design Tokens (grid 8pt, cores, tipografia, estados) pronta para consumo no Figma Dev Mode.</td>
+                    <td><span class="status-badge ativo">✅ Atendido</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Item 2: Estrutura Atual (Home, Distritos, Urbana, Rural)</strong><br><small>561 empresas mapeadas em 12 distritos.</small></td>
+                    <td>Mapeamento exato de cada nível hierárquico para 7 Templates Mestres dinâmicos, preservando 100% do banco de dados e do CMS existente.</td>
+                    <td><span class="status-badge ativo">✅ Atendido</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Item 3: Escopo por Blocos (A, B, C, D)</strong><br><small>Estudo + Sistema + 7 Layouts + Mobile 390px.</small></td>
+                    <td>Orçamento modular por blocos independentes (A: R$ 4,2k, B: R$ 6,8k, C: R$ 8,9k, D: R$ 4,5k) ou Pacote Integrado com desconto (R$ 22,8k).</td>
+                    <td><span class="status-badge ativo">✅ Atendido</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Item 4: Delimitação Estrita (Fora de Escopo)</strong><br><small>Sem código, sem redação, sem fotos, sem CMS.</small></td>
+                    <td>Total concordância: código front-end é do Diogo; APIs cartográficas são de engenharia; textos são da curadoria Rouanet.</td>
+                    <td><span class="status-badge ativo">✅ Atendido</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Item 5: Formato de Recebimento do Orçamento</strong><br><small>Prazos, valores unitários extras, 2 rodadas de revisão.</small></td>
+                    <td>Layout extra: R$ 1.600 | Rodada excedente: R$ 1.100 ou R$ 180/h | Prazo base: 25 a 28 dias úteis | Entrega no Figma Dev Mode.</td>
+                    <td><span class="status-badge ativo">✅ Atendido</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             <h2>2. Resolução dos 6 Pontos de Atenção Críticos (Item 6)</h2>
 
@@ -971,52 +1041,54 @@
 
           <div class="markdown-body">
             <h2>Detalhamento dos Blocos de Execução</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Bloco</th>
-                  <th>Escopo & Entregáveis</th>
-                  <th>Prazo</th>
-                  <th>Investimento</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Bloco A</strong></td>
-                  <td>Estudo de Diagnóstico UX/IA, Benchmarking e Arquitetura de Navegação</td>
-                  <td>6 dias úteis</td>
-                  <td><strong>R$ 4.200,00</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Bloco B</strong></td>
-                  <td>Design System & Tokens (Figma Dev Mode → React + WCAG 2.1 AA)</td>
-                  <td>8 dias úteis</td>
-                  <td><strong>R$ 6.800,00</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Bloco C</strong></td>
-                  <td>7 Templates Mestres Desktop (Home, Listagem, Detalhe, Distrito, Rouanet, Mapa, News)</td>
-                  <td>14 dias úteis</td>
-                  <td><strong>R$ 8.900,00</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Bloco D</strong></td>
-                  <td>Adaptação Responsiva Mobile-First (390px / Touch targets 44px)</td>
-                  <td>+3 dias úteis</td>
-                  <td><strong>R$ 4.500,00</strong></td>
-                </tr>
-                <tr style="background: rgba(59,130,246,0.08);">
-                  <td colspan="2"><strong>SUBTOTAL FRACIONADO</strong></td>
-                  <td><strong>28 dias úteis</strong></td>
-                  <td><strong>R$ 24.400,00</strong></td>
-                </tr>
-                <tr style="background: rgba(16,185,129,0.12); font-weight: 700;">
-                  <td colspan="2"><strong>PACOTE BASE INTEGRADO (A + B + C + D)</strong></td>
-                  <td><strong>~25 dias úteis</strong></td>
-                  <td style="color: var(--green); font-size: 16px;"><strong>R$ 22.800,00</strong></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="db-table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Bloco</th>
+                    <th>Escopo & Entregáveis</th>
+                    <th>Prazo</th>
+                    <th>Investimento</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Bloco A</strong></td>
+                    <td>Estudo de Diagnóstico UX/IA, Benchmarking e Arquitetura de Navegação</td>
+                    <td>6 dias úteis</td>
+                    <td><strong>R$ 4.200,00</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bloco B</strong></td>
+                    <td>Design System & Tokens (Figma Dev Mode → React + WCAG 2.1 AA)</td>
+                    <td>8 dias úteis</td>
+                    <td><strong>R$ 6.800,00</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bloco C</strong></td>
+                    <td>7 Templates Mestres Desktop (Home, Listagem, Detalhe, Distrito, Rouanet, Mapa, News)</td>
+                    <td>14 dias úteis</td>
+                    <td><strong>R$ 8.900,00</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bloco D</strong></td>
+                    <td>Adaptação Responsiva Mobile-First (390px / Touch targets 44px)</td>
+                    <td>+3 dias úteis</td>
+                    <td><strong>R$ 4.500,00</strong></td>
+                  </tr>
+                  <tr style="background: rgba(59,130,246,0.08);">
+                    <td colspan="2"><strong>SUBTOTAL FRACIONADO</strong></td>
+                    <td><strong>28 dias úteis</strong></td>
+                    <td><strong>R$ 24.400,00</strong></td>
+                  </tr>
+                  <tr style="background: rgba(16,185,129,0.12); font-weight: 700;">
+                    <td colspan="2"><strong>PACOTE BASE INTEGRADO (A + B + C + D)</strong></td>
+                    <td><strong>~25 dias úteis</strong></td>
+                    <td style="color: var(--green); font-size: 16px;"><strong>R$ 22.800,00</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             <h2>Cenário Recomendado: Projeto Integrado de Ativação Territorial (R$ 40.000,00)</h2>
             <div class="notion-callout key">
@@ -1047,48 +1119,50 @@
             </div>
 
             <h2>Os 5 Macro-Nichos de Caxias do Sul</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Nicho</th>
-                  <th>Estabelecimentos Âncora</th>
-                  <th>Dor do Produtor</th>
-                  <th>Modelo de Tecnologia Ativado</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>1. Gastronomia Urbana & Noite</strong></td>
-                  <td>BaitaKão, Sebastiana, Di Paolo, Alligator</td>
-                  <td>Dependência de reservas e no-show</td>
-                  <td>Vouchers de cortesia e Roteiros de Influenciadores</td>
-                </tr>
-                <tr>
-                  <td><strong>2. Enoturismo & Agroindústria</strong></td>
-                  <td>Cantinas de Forqueta, Linha 40, Queijarias</td>
-                  <td>Isolamento no interior / 86% sem site</td>
-                  <td>Venda de Degustação antecipada com Split Pix (10% Guia)</td>
-                </tr>
-                <tr>
-                  <td><strong>3. Hotelaria & Pousadas Rurais</strong></td>
-                  <td>Pousadas de Criúva, Ana Rech, Hotéis Centro</td>
-                  <td>Comissões de 15% a 25% no Booking/Airbnb</td>
-                  <td>Canal direto de reserva com benefício exclusivo</td>
-                </tr>
-                <tr>
-                  <td><strong>4. Ecoturismo & Aventura</strong></td>
-                  <td>Cânions de Criúva, Galópolis, Campings</td>
-                  <td>Vagas limitadas e agendamento manual</td>
-                  <td>Ticketing com agenda e confirmação imediata</td>
-                </tr>
-                <tr>
-                  <td><strong>5. Receptivos & Operadoras</strong></td>
-                  <td>Agências locais, vans e city tour</td>
-                  <td>Falta de canal unificado de pacotes</td>
-                  <td>Tarifário B2B para eventos e feiras da CIC</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="db-table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nicho</th>
+                    <th>Estabelecimentos Âncora</th>
+                    <th>Dor do Produtor</th>
+                    <th>Modelo de Tecnologia Ativado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. Gastronomia Urbana & Noite</strong></td>
+                    <td>BaitaKão, Sebastiana, Di Paolo, Alligator</td>
+                    <td>Dependência de reservas e no-show</td>
+                    <td>Vouchers de cortesia e Roteiros de Influenciadores</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Enoturismo & Agroindústria</strong></td>
+                    <td>Cantinas de Forqueta, Linha 40, Queijarias</td>
+                    <td>Isolamento no interior / 86% sem site</td>
+                    <td>Venda de Degustação antecipada com Split Pix (10% Guia)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. Hotelaria & Pousadas Rurais</strong></td>
+                    <td>Pousadas de Criúva, Ana Rech, Hotéis Centro</td>
+                    <td>Comissões de 15% a 25% no Booking/Airbnb</td>
+                    <td>Canal direto de reserva com benefício exclusivo</td>
+                  </tr>
+                  <tr>
+                    <td><strong>4. Ecoturismo & Aventura</strong></td>
+                    <td>Cânions de Criúva, Galópolis, Campings</td>
+                    <td>Vagas limitadas e agendamento manual</td>
+                    <td>Ticketing com agenda e confirmação imediata</td>
+                  </tr>
+                  <tr>
+                    <td><strong>5. Receptivos & Operadoras</strong></td>
+                    <td>Agências locais, vans e city tour</td>
+                    <td>Falta de canal unificado de pacotes</td>
+                    <td>Tarifário B2B para eventos e feiras da CIC</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
 
@@ -1139,66 +1213,68 @@
 
           <div class="markdown-body">
             <h2>Os 8 Moldes Estruturais</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Template</th>
-                  <th>Função no Portal</th>
-                  <th>Reutilização</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>TPL_01</code></td>
-                  <td><strong>Home</strong></td>
-                  <td>Banner, vitrines, atalhos urbana/rural e chamada Rouanet</td>
-                  <td>Raiz do portal</td>
-                </tr>
-                <tr>
-                  <td><code>TPL_02</code></td>
-                  <td><strong>Subcategorias</strong></td>
-                  <td>Listagem facetada com filtros de bairro, preço e ordenação</td>
-                  <td>Todas as subcategorias</td>
-                </tr>
-                <tr>
-                  <td><code>TPL_03</code></td>
-                  <td><strong>Detalhe Comercial</strong></td>
-                  <td>Ficha de restaurante/serviço focada em conversão rápida</td>
-                  <td>Centenas de empresas</td>
-                </tr>
-                <tr>
-                  <td><code>TPL_04</code></td>
-                  <td><strong>Distrito</strong></td>
-                  <td>Molde unificado para os 12 distritos de Caxias</td>
-                  <td>12 distritos</td>
-                </tr>
-                <tr>
-                  <td><code>TPL_05</code></td>
-                  <td><strong>Hub Rouanet</strong></td>
-                  <td>Linha do tempo histórica, marcos, lendas e acervo</td>
-                  <td>Área cultural nova</td>
-                </tr>
-                <tr>
-                  <td><code>TPL_06</code></td>
-                  <td><strong>Mapa Interativo</strong></td>
-                  <td>Canvas geoespacial com pins categorizados e drawer lateral</td>
-                  <td>Interface de mapa</td>
-                </tr>
-                <tr>
-                  <td><code>TPL_07</code></td>
-                  <td><strong>Notícias</strong></td>
-                  <td>Grade editorial com destaque semanal e paginação</td>
-                  <td>Área de artigos</td>
-                </tr>
-                <tr>
-                  <td><code>TPL_08</code></td>
-                  <td><strong>Detalhe Rouanet</strong></td>
-                  <td>Ficha profunda para patrimônios históricos e monumentos</td>
-                  <td>Exclusivo cultural</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="db-table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Template</th>
+                    <th>Função no Portal</th>
+                    <th>Reutilização</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>TPL_01</code></td>
+                    <td><strong>Home</strong></td>
+                    <td>Banner, vitrines, atalhos urbana/rural e chamada Rouanet</td>
+                    <td>Raiz do portal</td>
+                  </tr>
+                  <tr>
+                    <td><code>TPL_02</code></td>
+                    <td><strong>Subcategorias</strong></td>
+                    <td>Listagem facetada com filtros de bairro, preço e ordenação</td>
+                    <td>Todas as subcategorias</td>
+                  </tr>
+                  <tr>
+                    <td><code>TPL_03</code></td>
+                    <td><strong>Detalhe Comercial</strong></td>
+                    <td>Ficha de restaurante/serviço focada em conversão rápida</td>
+                    <td>Centenas de empresas</td>
+                  </tr>
+                  <tr>
+                    <td><code>TPL_04</code></td>
+                    <td><strong>Distrito</strong></td>
+                    <td>Molde unificado para os 12 distritos de Caxias</td>
+                    <td>12 distritos</td>
+                  </tr>
+                  <tr>
+                    <td><code>TPL_05</code></td>
+                    <td><strong>Hub Rouanet</strong></td>
+                    <td>Linha do tempo histórica, marcos, lendas e acervo</td>
+                    <td>Área cultural nova</td>
+                  </tr>
+                  <tr>
+                    <td><code>TPL_06</code></td>
+                    <td><strong>Mapa Interativo</strong></td>
+                    <td>Canvas geoespacial com pins categorizados e drawer lateral</td>
+                    <td>Interface de mapa</td>
+                  </tr>
+                  <tr>
+                    <td><code>TPL_07</code></td>
+                    <td><strong>Notícias</strong></td>
+                    <td>Grade editorial com destaque semanal e paginação</td>
+                    <td>Área de artigos</td>
+                  </tr>
+                  <tr>
+                    <td><code>TPL_08</code></td>
+                    <td><strong>Detalhe Rouanet</strong></td>
+                    <td>Ficha profunda para patrimônios históricos e monumentos</td>
+                    <td>Exclusivo cultural</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
 
@@ -1435,6 +1511,7 @@ Estrutura proposta pelo cliente: 1 estudo + 1 sistema de operação + 7 layouts 
     function switchTab(tabId) {
       document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.mobile-nav-pill').forEach(el => el.classList.remove('active'));
       
       const targetPane = document.getElementById(tabId);
       if (targetPane) targetPane.classList.add('active');
@@ -1442,10 +1519,13 @@ Estrutura proposta pelo cliente: 1 estudo + 1 sistema de operação + 7 layouts 
       const activeNav = Array.from(document.querySelectorAll('.nav-item')).find(el => el.getAttribute('onclick').includes(tabId));
       if (activeNav) activeNav.classList.add('active');
 
+      const activePill = Array.from(document.querySelectorAll('.mobile-nav-pill')).find(el => el.getAttribute('onclick').includes(tabId));
+      if (activePill) activePill.classList.add('active');
+
       const titleMap = {
         'tab-caracracha': 'Auditoria Cara-Crachá',
-        'tab-fit': 'Fit Produtos Onira Labs (208 Alvos)',
-        'tab-database': 'Base de Dados Geral (208)',
+        'tab-fit': 'Fit Produtos Onira (208)',
+        'tab-database': 'Base Geral (208)',
         'tab-orcamento': 'Devolutiva de Valores',
         'tab-negocios': 'Modelagem de Negócios',
         'tab-sustentacao': 'Plano de Sustentação',
